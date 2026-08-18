@@ -5,7 +5,6 @@ import frota from "@/assets/frota.jpg";
 import terraplenagem from "@/assets/terraplenagem.jpg";
 import pavimentacao from "@/assets/pavimentacao.jpg";
 import caminhao from "@/assets/caminhao.jpg";
-import telecom from "@/assets/telecom.jpg";
 import equipes from "@/assets/equipes-terceirizacao.jpg";
 
 export const Route = createFileRoute("/")({
