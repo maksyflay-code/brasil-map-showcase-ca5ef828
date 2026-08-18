@@ -15,7 +15,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Obras e engenharia, locação de equipamentos e terceirização de mão de obra para órgãos públicos e empresas privadas. Presença em 13 estados.",
+          "Obras e engenharia, locação de equipamentos e terceirização de mão de obra para órgãos públicos e empresas privadas. Presença em 12 estados.",
       },
       {
         property: "og:title",
@@ -256,7 +256,7 @@ function Index() {
         <div className="px-6 py-16 md:px-12">
           <p className="label-caps text-brand-red">Atuação</p>
           <h2 className="mt-5 text-3xl leading-tight text-navy md:text-4xl">
-            Presença em 13 estados brasileiros.
+            Presença em 12 estados brasileiros.
           </h2>
           <p className="mt-5 max-w-lg text-sm leading-relaxed text-muted-foreground">
             Mobilização com logística própria e equipes locais. Veja o mapa
