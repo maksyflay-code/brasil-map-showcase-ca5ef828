@@ -68,7 +68,7 @@ export function CredentialsRail() {
       <div className="flex flex-1 flex-col">
         <Item to="/" hash="quem-somos" title="10 Anos" sub="Trajetória contínua" />
 
-        <Item to="/atuacao" title="13 Estados" sub="Ver mapa nacional">
+        <Item to="/atuacao" title="12 Estados" sub="Ver mapa nacional">
           <MiniMap />
         </Item>
 

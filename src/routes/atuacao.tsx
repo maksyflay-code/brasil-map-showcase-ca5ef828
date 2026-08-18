@@ -12,13 +12,13 @@ export const Route = createFileRoute("/atuacao")({
       {
         name: "description",
         content:
-          "Mapa da atuação da PROJETAJ: 13 estados atendidos com obras e engenharia, locação de equipamentos e terceirização de mão de obra.",
+          "Mapa da atuação da PROJETAJ: 12 estados atendidos com obras e engenharia, locação de equipamentos e terceirização de mão de obra.",
       },
       { property: "og:title", content: "Atuação nacional | PROJETAJ" },
       {
         property: "og:description",
         content:
-          "Conheça os 13 estados onde a PROJETAJ mobiliza frota, equipes e engenharia.",
+          "Conheça os 12 estados onde a PROJETAJ mobiliza frota, equipes e engenharia.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -41,7 +41,7 @@ function Atuacao() {
         </Link>
         <p className="label-caps mt-8 text-brand-red">Atuação nacional</p>
         <h1 className="mt-4 max-w-3xl text-4xl leading-tight text-navy md:text-6xl">
-          Presença em <span className="text-brand-red">13 estados</span>{" "}
+          Presença em <span className="text-brand-red">12 estados</span>{" "}
           brasileiros.
         </h1>
         <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">
@@ -56,7 +56,7 @@ function Atuacao() {
             viewBox={`0 0 ${MAP_WIDTH} ${MAP_HEIGHT}`}
             className="mx-auto h-auto w-full max-w-2xl"
             role="img"
-            aria-label="Mapa do Brasil com os 13 estados atendidos pela PROJETAJ"
+            aria-label="Mapa do Brasil com os 12 estados atendidos pela PROJETAJ"
           >
             {BRAZIL_STATES.map((s) => {
               const served = SERVED_UFS.includes(s.uf);

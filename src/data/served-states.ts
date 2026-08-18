@@ -11,7 +11,6 @@ export const SERVED_UFS = [
   "TO",
   "GO",
   "MG",
-  "SP",
 ];
 
 export const SERVED_DETAILS: Record<string, string> = {
@@ -27,5 +26,4 @@ export const SERVED_DETAILS: Record<string, string> = {
   TO: "Locação de máquinas e caminhões para operações privadas.",
   GO: "Instalações especiais e manutenção predial.",
   MG: "Reformas completas e elétrica complexa.",
-  SP: "Suporte administrativo, suprimentos e engenharia de planejamento.",
 };
