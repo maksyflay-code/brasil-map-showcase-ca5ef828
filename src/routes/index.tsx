@@ -295,8 +295,32 @@ function Index() {
         </div>
       </section>
 
+      <section
+        id="credenciais"
+        className="border-b border-border px-6 py-20 md:px-12"
+      >
+        <p className="label-caps text-brand-red">Credenciais</p>
+        <h2 className="mt-5 max-w-3xl text-3xl leading-tight text-navy md:text-5xl">
+          O que sustenta cada contrato.
+        </h2>
+        <div className="mt-12 grid gap-px md:grid-cols-3">
+          {CREDENTIALS.map((c) => (
+            <div
+              key={c.id}
+              id={c.id}
+              className="scroll-mt-24 border-t-2 border-brand-red pt-5 md:pr-8"
+            >
+              <span className="label-caps text-brand-red">{c.label}</span>
+              <p className="mt-3 font-display text-2xl text-navy">{c.title}</p>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                {c.text}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section id="contato" className="px-6 py-20 md:px-12">
-        {null}
         <p className="label-caps text-brand-red">Próximo contrato</p>
         <h2 className="mt-5 max-w-3xl text-3xl leading-tight text-navy md:text-5xl">
           Qual capacidade sua operação precisa agora?
