@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Check, ArrowUpRight } from "lucide-react";
+import { Check } from "lucide-react";
 import { BRAZIL_STATES, MAP_HEIGHT, MAP_WIDTH } from "@/data/brazil-map";
 import { SERVED_UFS } from "@/data/served-states";
 
@@ -30,23 +30,31 @@ function MiniMap() {
 function Item({
   title,
   sub,
+  to,
+  hash,
   children,
 }: {
   title: string;
   sub: string;
+  to: string;
+  hash?: string;
   children?: React.ReactNode;
 }) {
   return (
-    <div className="flex flex-1 flex-col items-center justify-center border-b border-white/10 px-3 py-3 text-center last:border-b-0">
+    <Link
+      to={to}
+      {...(hash ? { hash } : {})}
+      className="group flex flex-1 flex-col items-center justify-center border-b border-white/10 px-3 py-3 text-center transition-colors last:border-b-0 hover:bg-white/5"
+    >
       <Check className="mb-1 h-3 w-3 text-brand-red" strokeWidth={3} />
       {children}
-      <p className="font-display text-[0.8rem] font-bold uppercase leading-tight tracking-tight text-primary-foreground">
+      <p className="font-display text-[0.8rem] font-bold uppercase leading-tight tracking-tight text-primary-foreground underline decoration-brand-red decoration-2 underline-offset-4 group-hover:decoration-white">
         {title}
       </p>
       <p className="mt-1 text-[0.6rem] uppercase leading-tight tracking-[0.08em] text-white/55">
         {sub}
       </p>
-    </div>
+    </Link>
   );
 }
 
@@ -58,36 +66,20 @@ export function CredentialsRail() {
       </div>
 
       <div className="flex flex-1 flex-col">
-        <Item title="10 Anos" sub="Trajetória contínua" />
+        <Item to="/" hash="quem-somos" title="10 Anos" sub="Trajetória contínua" />
 
-        <div className="flex flex-1 flex-col items-center justify-center border-b border-white/10 px-3 py-3 text-center">
+        <Item to="/atuacao" title="13 Estados" sub="Ver mapa nacional">
           <MiniMap />
-          <p className="mt-1 text-[0.6rem] uppercase leading-tight tracking-[0.08em] text-white/60">
-            Presença em 13 estados
-          </p>
-          <Link
-            to="/atuacao"
-            className="mt-2 inline-flex items-center gap-1 border border-white/30 px-2 py-1 text-[0.55rem] uppercase tracking-[0.1em] text-primary-foreground transition-colors hover:bg-brand-red hover:border-brand-red"
-          >
-            Ver mapa
-            <ArrowUpRight className="h-3 w-3" />
-          </Link>
-        </div>
+        </Item>
 
-        <Item title="CREA" sub="Empresa registrada" />
-        <Item title="Regularidade" sub="Certidões verificáveis" />
-        <div className="flex flex-1 flex-col items-center justify-center px-3 py-3 text-center">
-          <Check className="mb-1 h-3 w-3 text-brand-red" strokeWidth={3} />
-          <p className="font-display text-[0.8rem] font-bold uppercase text-primary-foreground">
-            LGPD
-          </p>
-          <a
-            href="mailto:privacidade@projetaj.com.br"
-            className="mt-1 text-[0.55rem] uppercase leading-tight tracking-[0.08em] text-white/55 underline underline-offset-2"
-          >
-            Canal de privacidade
-          </a>
-        </div>
+        <Item to="/" hash="crea" title="CREA" sub="Empresa registrada" />
+        <Item
+          to="/"
+          hash="regularidade"
+          title="Regularidade"
+          sub="Certidões verificáveis"
+        />
+        <Item to="/" hash="lgpd" title="LGPD" sub="Canal de privacidade" />
       </div>
     </aside>
   );

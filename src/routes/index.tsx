@@ -5,7 +5,7 @@ import frota from "@/assets/frota.jpg";
 import terraplenagem from "@/assets/terraplenagem.jpg";
 import pavimentacao from "@/assets/pavimentacao.jpg";
 import caminhao from "@/assets/caminhao.jpg";
-import telecom from "@/assets/telecom.jpg";
+import equipes from "@/assets/equipes-terceirizacao.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -90,7 +90,28 @@ const SERVICES = [
       "Técnicos especializados",
       "Supervisão",
     ],
-    img: telecom,
+    img: equipes,
+  },
+];
+
+const CREDENTIALS = [
+  {
+    id: "crea",
+    label: "CREA",
+    title: "Empresa registrada no CREA",
+    text: "Registro ativo com responsável técnico habilitado, permitindo a execução e a ART de obras de infraestrutura, edificações e instalações especiais.",
+  },
+  {
+    id: "regularidade",
+    label: "Regularidade",
+    title: "Certidões verificáveis",
+    text: "Mantemos regularidade fiscal, trabalhista e previdenciária (federal, estadual, municipal, FGTS e CNDT). As certidões são enviadas e podem ser conferidas nos portais oficiais a qualquer momento.",
+  },
+  {
+    id: "lgpd",
+    label: "LGPD",
+    title: "Canal de privacidade",
+    text: "Tratamos dados pessoais conforme a Lei 13.709/2018. Solicitações de acesso, correção ou exclusão pelo e-mail privacidade@projetaj.com.br.",
   },
 ];
 
@@ -270,6 +291,31 @@ function Index() {
               className="h-40 w-full object-cover"
             />
           </div>
+        </div>
+      </section>
+
+      <section
+        id="credenciais"
+        className="border-b border-border px-6 py-20 md:px-12"
+      >
+        <p className="label-caps text-brand-red">Credenciais</p>
+        <h2 className="mt-5 max-w-3xl text-3xl leading-tight text-navy md:text-5xl">
+          O que sustenta cada contrato.
+        </h2>
+        <div className="mt-12 grid gap-px md:grid-cols-3">
+          {CREDENTIALS.map((c) => (
+            <div
+              key={c.id}
+              id={c.id}
+              className="scroll-mt-24 border-t-2 border-brand-red pt-5 md:pr-8"
+            >
+              <span className="label-caps text-brand-red">{c.label}</span>
+              <p className="mt-3 font-display text-2xl text-navy">{c.title}</p>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                {c.text}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
