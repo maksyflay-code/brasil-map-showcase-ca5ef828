@@ -1,8 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
-import heroObras from "@/assets/hero-obras.jpg";
+import heroObras from "@/assets/operacao.jpg";
 import frota from "@/assets/frota.jpg";
-import equipes from "@/assets/equipes.jpg";
+import terraplenagem from "@/assets/terraplenagem.jpg";
+import pavimentacao from "@/assets/pavimentacao.jpg";
+import caminhao from "@/assets/caminhao.jpg";
+import telecom from "@/assets/telecom.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -57,7 +60,7 @@ const SERVICES = [
       "Elétrica complexa",
       "Telecom e climatização",
     ],
-    img: heroObras,
+    img: pavimentacao,
   },
   {
     n: "02",
@@ -72,7 +75,7 @@ const SERVICES = [
       "Caminhões",
       "Carros e utilitários",
     ],
-    img: frota,
+    img: caminhao,
   },
   {
     n: "03",
@@ -87,7 +90,7 @@ const SERVICES = [
       "Técnicos especializados",
       "Supervisão",
     ],
-    img: equipes,
+    img: telecom,
   },
 ];
 
@@ -124,12 +127,12 @@ function Index() {
       <section className="relative border-b border-border">
         <img
           src={heroObras}
-          alt="Motoniveladora executando terraplenagem em obra rodoviária"
+          alt="Equipe da PROJETAJ em operação de terraplenagem"
           width={1600}
           height={1008}
           className="h-[62vh] min-h-[420px] w-full object-cover"
         />
-        <div className="absolute inset-0 bg-navy-deep/70" />
+        <div className="absolute inset-0 bg-navy-deep/80" />
         <div className="absolute inset-0 flex flex-col justify-end px-6 pb-12 md:px-12 md:pb-16">
           <p className="label-caps text-white/70">Quem somos / 2016—2026</p>
           <h1 className="mt-4 max-w-4xl text-4xl leading-[1.05] text-primary-foreground md:text-7xl">
@@ -252,15 +255,15 @@ function Index() {
           <div className="mt-8 grid grid-cols-2 gap-4">
             <img
               src={frota}
-              alt="Frota para operação"
+              alt="Retroescavadeira da frota em operação"
               loading="lazy"
               width={1200}
               height={900}
               className="h-40 w-full object-cover"
             />
             <img
-              src={equipes}
-              alt="Equipes mobilizadas em campo"
+              src={terraplenagem}
+              alt="Motoniveladora em serviço de terraplenagem"
               loading="lazy"
               width={1200}
               height={900}
