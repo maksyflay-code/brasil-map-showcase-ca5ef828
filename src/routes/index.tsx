@@ -6,6 +6,7 @@ import terraplenagem from "@/assets/terraplenagem.jpg";
 import pavimentacao from "@/assets/pavimentacao.jpg";
 import caminhao from "@/assets/caminhao.jpg";
 import telecom from "@/assets/telecom.jpg";
+import equipes from "@/assets/equipes-terceirizacao.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -90,7 +91,28 @@ const SERVICES = [
       "Técnicos especializados",
       "Supervisão",
     ],
-    img: telecom,
+    img: equipes,
+  },
+];
+
+const CREDENTIALS = [
+  {
+    id: "crea",
+    label: "CREA",
+    title: "Empresa registrada no CREA",
+    text: "Registro ativo com responsável técnico habilitado, permitindo a execução e a ART de obras de infraestrutura, edificações e instalações especiais.",
+  },
+  {
+    id: "regularidade",
+    label: "Regularidade",
+    title: "Certidões verificáveis",
+    text: "Mantemos regularidade fiscal, trabalhista e previdenciária (federal, estadual, municipal, FGTS e CNDT). As certidões são enviadas e podem ser conferidas nos portais oficiais a qualquer momento.",
+  },
+  {
+    id: "lgpd",
+    label: "LGPD",
+    title: "Canal de privacidade",
+    text: "Tratamos dados pessoais conforme a Lei 13.709/2018. Solicitações de acesso, correção ou exclusão pelo e-mail privacidade@projetaj.com.br.",
   },
 ];
 
@@ -274,6 +296,7 @@ function Index() {
       </section>
 
       <section id="contato" className="px-6 py-20 md:px-12">
+        {null}
         <p className="label-caps text-brand-red">Próximo contrato</p>
         <h2 className="mt-5 max-w-3xl text-3xl leading-tight text-navy md:text-5xl">
           Qual capacidade sua operação precisa agora?
