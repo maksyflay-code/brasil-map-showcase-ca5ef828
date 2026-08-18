@@ -7,7 +7,7 @@ function MiniMap() {
   return (
     <svg
       viewBox={`0 0 ${MAP_WIDTH} ${MAP_HEIGHT}`}
-      className="mx-auto h-24 w-auto"
+      className="mx-auto h-14 w-auto"
       role="img"
       aria-label="Mapa do Brasil com estados atendidos"
     >
@@ -17,8 +17,8 @@ function MiniMap() {
           d={s.d}
           className={
             SERVED_UFS.includes(s.uf)
-              ? "fill-navy stroke-background"
-              : "fill-border stroke-background"
+              ? "fill-brand-red stroke-navy-deep"
+              : "fill-white/25 stroke-navy-deep"
           }
           strokeWidth={2}
         />
@@ -27,94 +27,66 @@ function MiniMap() {
   );
 }
 
-function Tick() {
-  return <Check className="mb-4 h-5 w-5 text-brand-red" strokeWidth={3} />;
+function Item({
+  title,
+  sub,
+  children,
+}: {
+  title: string;
+  sub: string;
+  children?: React.ReactNode;
+}) {
+  return (
+    <div className="flex flex-1 flex-col items-center justify-center border-b border-white/10 px-3 py-3 text-center last:border-b-0">
+      <Check className="mb-1 h-3 w-3 text-brand-red" strokeWidth={3} />
+      {children}
+      <p className="font-display text-[0.8rem] font-bold uppercase leading-tight tracking-tight text-primary-foreground">
+        {title}
+      </p>
+      <p className="mt-1 text-[0.6rem] uppercase leading-tight tracking-[0.08em] text-white/55">
+        {sub}
+      </p>
+    </div>
+  );
 }
 
 export function CredentialsRail() {
   return (
-    <aside className="hidden lg:flex fixed inset-y-0 left-0 z-40 w-[300px] flex-col border-r-[5px] border-brand-red bg-navy-deep">
-      <div className="label-caps border-b border-white/10 py-6 text-center leading-5 text-white/70">
+    <aside className="fixed inset-y-0 left-0 z-40 hidden h-screen w-[150px] flex-col overflow-hidden border-r-4 border-brand-red bg-navy-deep lg:flex">
+      <div className="border-b border-white/10 py-2 text-center text-[0.58rem] uppercase tracking-[0.14em] text-white/50">
         Credenciais
-        <br />
-        Institucionais
       </div>
 
-      <div className="flex-1 overflow-y-auto">
-        <div className="border-b border-border bg-card px-6 py-8 text-center">
-          <Tick />
-          <p className="font-display text-4xl leading-none text-brand-red">
-            <span className="font-bold">10</span> ANOS
-          </p>
-          <p className="label-caps mt-4 leading-5 text-navy">
-            Trajetória
-            <br />
-            empresarial
-            <br />
-            contínua
-          </p>
-        </div>
+      <div className="flex flex-1 flex-col">
+        <Item title="10 Anos" sub="Trajetória contínua" />
 
-        <div className="border-b border-border bg-card px-6 py-8 text-center">
+        <div className="flex flex-1 flex-col items-center justify-center border-b border-white/10 px-3 py-3 text-center">
           <MiniMap />
-          <p className="label-caps mt-4 leading-5 text-brand-red">
+          <p className="mt-1 text-[0.6rem] uppercase leading-tight tracking-[0.08em] text-white/60">
             Presença em 13 estados
           </p>
           <Link
             to="/atuacao"
-            className="label-caps mt-4 flex items-center justify-between gap-3 border-2 border-navy px-4 py-3 text-left leading-4 text-navy transition-colors hover:bg-navy hover:text-primary-foreground"
+            className="mt-2 inline-flex items-center gap-1 border border-white/30 px-2 py-1 text-[0.55rem] uppercase tracking-[0.1em] text-primary-foreground transition-colors hover:bg-brand-red hover:border-brand-red"
           >
-            Ver atuação
-            <br />
-            nacional
-            <ArrowUpRight className="h-4 w-4 shrink-0" />
+            Ver mapa
+            <ArrowUpRight className="h-3 w-3" />
           </Link>
         </div>
 
-        <div className="border-b border-border bg-card px-6 py-8 text-center">
-          <Tick />
-          <p className="font-display text-2xl font-bold tracking-wide text-brand-red">
-            CREA
-          </p>
-          <p className="label-caps mt-3 leading-5 text-navy">
-            Empresa registrada
-          </p>
-          <p className="label-caps mt-2 text-[0.6rem] leading-4 text-muted-foreground">
-            Responsabilidade técnica
-          </p>
-        </div>
-
-        <div className="border-b border-border bg-card px-6 py-8 text-center">
-          <Tick />
-          <p className="font-display text-xl font-bold leading-6 text-brand-red">
-            REGULARIDADE
-            <br />
-            DOCUMENTAL
-          </p>
-          <p className="label-caps mt-3 leading-5 text-navy">
-            Certidões
-            <br />
-            verificáveis
-          </p>
-          <p className="label-caps mt-2 text-[0.6rem] leading-4 text-muted-foreground">
-            Emissão e validade consultáveis
-          </p>
-        </div>
-
-        <div className="bg-card px-6 py-8 text-center">
-          <Tick />
-          <p className="font-display text-2xl font-bold text-brand-red underline underline-offset-4">
+        <Item title="CREA" sub="Empresa registrada" />
+        <Item title="Regularidade" sub="Certidões verificáveis" />
+        <div className="flex flex-1 flex-col items-center justify-center px-3 py-3 text-center">
+          <Check className="mb-1 h-3 w-3 text-brand-red" strokeWidth={3} />
+          <p className="font-display text-[0.8rem] font-bold uppercase text-primary-foreground">
             LGPD
           </p>
           <a
             href="mailto:privacidade@projetaj.com.br"
-            className="label-caps mt-3 block leading-5 text-navy underline underline-offset-4"
+            className="mt-1 text-[0.55rem] uppercase leading-tight tracking-[0.08em] text-white/55 underline underline-offset-2"
           >
-            Canal oficial de privacidade
+            Canal de privacidade
           </a>
-          <p className="label-caps mt-2 text-[0.6rem] leading-4 text-muted-foreground">
-            Encarregada e contato publicados
-          </p>
         </div>
       </div>
     </aside>

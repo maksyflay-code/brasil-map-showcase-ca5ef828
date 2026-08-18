@@ -3,6 +3,10 @@ import { ArrowUpRight } from "lucide-react";
 import heroObras from "@/assets/hero-obras.jpg";
 import frota from "@/assets/frota.jpg";
 import equipes from "@/assets/equipes.jpg";
+import terraplenagem from "@/assets/terraplenagem.jpg";
+import pavimentacao from "@/assets/pavimentacao.jpg";
+import caminhao from "@/assets/caminhao.jpg";
+import telecom from "@/assets/telecom.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -57,7 +61,7 @@ const SERVICES = [
       "Elétrica complexa",
       "Telecom e climatização",
     ],
-    img: heroObras,
+    img: pavimentacao,
   },
   {
     n: "02",
@@ -72,7 +76,7 @@ const SERVICES = [
       "Caminhões",
       "Carros e utilitários",
     ],
-    img: frota,
+    img: caminhao,
   },
   {
     n: "03",
@@ -87,7 +91,7 @@ const SERVICES = [
       "Técnicos especializados",
       "Supervisão",
     ],
-    img: equipes,
+    img: telecom,
   },
 ];
 
@@ -252,15 +256,15 @@ function Index() {
           <div className="mt-8 grid grid-cols-2 gap-4">
             <img
               src={frota}
-              alt="Frota para operação"
+              alt="Retroescavadeira da frota em operação"
               loading="lazy"
               width={1200}
               height={900}
               className="h-40 w-full object-cover"
             />
             <img
-              src={equipes}
-              alt="Equipes mobilizadas em campo"
+              src={terraplenagem}
+              alt="Motoniveladora em serviço de terraplenagem"
               loading="lazy"
               width={1200}
               height={900}
