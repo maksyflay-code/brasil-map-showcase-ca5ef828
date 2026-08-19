@@ -274,7 +274,7 @@ function IndexPage() {
               {s.img2 ? (
                 <img
                   src={s.img2}
-                  alt="Ambiente corporativo reformado pela PROJETAJ"
+                  alt={s.img2Alt}
                   loading="lazy"
                   width={1200}
                   height={800}
