@@ -422,8 +422,16 @@ function IndexPage() {
             <dt className="label-caps text-muted-foreground">
               Telefone e WhatsApp
             </dt>
-            <dd className="mt-2 text-navy">
-              <a href="tel:+5574999176066">(74) 99917-6066</a>
+            <dd className="mt-2">
+              <a
+                href="https://wa.me/5574999176066?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20a%20PROJETAJ%20sobre%20um%20projeto."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-navy underline decoration-brand-red decoration-2 underline-offset-4 transition-colors hover:text-brand-red"
+              >
+                <MessageCircle className="h-4 w-4 text-brand-red" />
+                (74) 99917-6066
+              </a>
             </dd>
           </div>
           <div>
