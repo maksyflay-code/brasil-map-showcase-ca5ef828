@@ -62,7 +62,7 @@ export function CredentialsRail() {
   return (
     <aside className="fixed inset-y-0 left-0 z-40 hidden h-screen w-[150px] flex-col overflow-hidden border-r-4 border-brand-red bg-navy-deep lg:flex">
       <div className="border-b border-white/10 py-2 text-center text-[0.58rem] uppercase tracking-[0.14em] text-white/50">
-        Selos
+        Credenciais
       </div>
 
       <div className="flex flex-1 flex-col">
