@@ -6,6 +6,7 @@ import frota from "@/assets/frota.jpg";
 import terraplenagem from "@/assets/terraplenagem.jpg";
 import pavimentacao from "@/assets/pavimentacao-obras.jpg.asset.json";
 import caminhao from "@/assets/caminhao.jpg";
+import reforma from "@/assets/reforma.jpg";
 import telecom from "@/assets/telecom.jpg";
 import equipes from "@/assets/equipes-terceirizacao.jpg";
 
