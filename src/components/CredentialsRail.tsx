@@ -62,11 +62,8 @@ function Item({
 export function CredentialsRail() {
   return (
     <aside className="fixed inset-y-0 left-0 z-40 hidden h-screen w-[150px] flex-col overflow-hidden border-r-4 border-brand-red bg-navy-deep lg:flex">
-      <div className="border-b border-white/10 px-3 py-2 text-center">
-        <p className="font-display text-[0.95rem] font-bold uppercase tracking-[0.2em] text-primary-foreground">
-          PROJETAJ
-        </p>
-        <p className="mt-2 text-[0.58rem] uppercase tracking-[0.14em] text-white/50">
+      <div className="border-b border-white/10 px-3 py-4 text-center">
+        <p className="text-[0.58rem] uppercase tracking-[0.14em] text-white/50">
           Selos
         </p>
       </div>
