@@ -289,25 +289,56 @@ function Index() {
           </Link>
         </div>
         <div className="border-t border-border px-6 py-16 md:px-12 lg:border-l lg:border-t-0">
-          <p className="label-caps text-muted-foreground">Registros da operação</p>
-          <h3 className="mt-5 text-2xl text-navy">Trabalho que fala por si.</h3>
-          <div className="mt-8 grid grid-cols-2 gap-4">
-            <img
-              src={frota}
-              alt="Retroescavadeira da frota em operação"
-              loading="lazy"
-              width={1200}
-              height={900}
-              className="h-40 w-full object-cover"
+          <p className="label-caps text-muted-foreground">Cobertura</p>
+          <h3 className="mt-5 text-2xl text-navy">
+            Do Nordeste ao Centro-Oeste, com base local.
+          </h3>
+          <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+            Frota, equipes e suprimentos deslocados conforme o cronograma de
+            cada contrato, com acompanhamento técnico em campo.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-b border-border bg-navy-deep px-6 py-20 md:px-12">
+        <p className="label-caps text-brand-red">Registros da operação</p>
+        <h2 className="mt-5 max-w-3xl text-3xl leading-tight text-primary-foreground md:text-5xl">
+          Trabalho que fala por si.
+        </h2>
+        <div className="mt-12 grid gap-4 lg:grid-cols-2">
+          <GalleryTile
+            img={terraplenagem}
+            tag="Frota"
+            caption="Motoniveladora em campo"
+            className="h-[320px] lg:h-[560px]"
+          />
+          <div className="grid gap-4">
+            <GalleryTile
+              img={reforma}
+              tag="Reformas"
+              caption="Ambiente corporativo renovado"
+              className="h-[260px]"
             />
-            <img
-              src={terraplenagem}
-              alt="Motoniveladora em serviço de terraplenagem"
-              loading="lazy"
-              width={1200}
-              height={900}
-              className="h-40 w-full object-cover"
-            />
+            <div className="grid gap-4 sm:grid-cols-3">
+              <GalleryTile
+                img={telecom}
+                tag="Telecom"
+                caption="Infraestrutura de dados"
+                className="h-[260px]"
+              />
+              <GalleryTile
+                img={caminhao}
+                tag="Transporte"
+                caption="Frota para operação"
+                className="h-[260px]"
+              />
+              <GalleryTile
+                img={frota}
+                tag="Campo"
+                caption="Mobilização operacional"
+                className="h-[260px]"
+              />
+            </div>
           </div>
         </div>
       </section>
