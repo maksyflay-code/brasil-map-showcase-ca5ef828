@@ -130,9 +130,13 @@ function Index() {
   return (
     <div className="bg-background">
       <header className="sticky top-0 z-30 flex items-center justify-between gap-6 border-b border-border bg-background/95 px-6 py-4 backdrop-blur md:px-12">
-        <span className="font-display text-lg font-bold tracking-[0.2em] text-navy">
-          PROJETAJ
-        </span>
+        <Link to="/" className="flex items-center">
+          <img
+            src={logo.url}
+            alt="PROJETAJ Empreendimentos — 10 anos"
+            className="h-8 w-auto md:h-10"
+          />
+        </Link>
         <nav className="hidden items-center gap-8 md:flex">
           {NAV.map((n) => (
             <a
