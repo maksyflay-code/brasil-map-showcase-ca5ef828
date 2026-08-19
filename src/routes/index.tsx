@@ -242,11 +242,11 @@ function IndexPage() {
         {SERVICES.map((s, i) => (
           <article
             key={s.n}
-            className={`grid border-b border-border lg:min-h-[640px] lg:grid-cols-2 ${
+            className={`grid border-b border-border lg:h-[740px] lg:grid-cols-2 ${
               i % 2 === 1 ? "lg:[&>figure]:order-first" : ""
             }`}
           >
-            <div className="flex flex-col px-6 py-16 md:px-12">
+            <div className="flex flex-col overflow-hidden px-6 py-16 md:px-12">
               <p className="label-caps text-brand-red">
                 {s.n} — {s.title}
               </p>
@@ -273,7 +273,7 @@ function IndexPage() {
                   loading="lazy"
                   width={1200}
                   height={800}
-                  className="mt-8 h-48 w-full max-w-xl flex-1 object-cover md:h-56"
+                  className="mt-8 h-48 w-full max-w-xl flex-1 object-cover lg:h-auto lg:min-h-0"
                 />
               ) : null}
             </div>
