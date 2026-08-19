@@ -273,25 +273,57 @@ function Index() {
           </Link>
         </div>
         <div className="border-t border-border px-6 py-16 md:px-12 lg:border-l lg:border-t-0">
-          <p className="label-caps text-muted-foreground">Registros da operação</p>
-          <h3 className="mt-5 text-2xl text-navy">Trabalho que fala por si.</h3>
-          <div className="mt-8 grid grid-cols-2 gap-4">
-            <img
-              src={frota}
-              alt="Retroescavadeira da frota em operação"
-              loading="lazy"
-              width={1200}
-              height={900}
-              className="h-40 w-full object-cover"
+          <p className="label-caps text-muted-foreground">Cobertura</p>
+          <h3 className="mt-5 text-2xl text-navy">
+            Equipes locais, logística própria.
+          </h3>
+          <p className="mt-5 max-w-lg text-sm leading-relaxed text-muted-foreground">
+            Mobilizamos frota e pessoas a partir da Bahia para contratos em todo
+            o país, com acompanhamento em campo do início ao encerramento.
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-navy-deep px-6 py-20 md:px-12">
+        <p className="label-caps text-brand-red">Registros da operação</p>
+        <h2 className="mt-5 text-3xl leading-tight text-primary-foreground md:text-5xl">
+          Trabalho que fala por si.
+        </h2>
+
+        <div className="mt-12 grid gap-4 lg:grid-cols-2">
+          <GalleryCard
+            src={terraplenagem}
+            tag="Frota"
+            title="Motoniveladora em campo"
+            className="h-[280px] lg:h-full lg:min-h-[520px]"
+          />
+          <div className="grid gap-4">
+            <GalleryCard
+              src={reforma}
+              tag="Reformas"
+              title="Ambiente corporativo renovado"
+              className="h-[240px]"
             />
-            <img
-              src={terraplenagem}
-              alt="Motoniveladora em serviço de terraplenagem"
-              loading="lazy"
-              width={1200}
-              height={900}
-              className="h-40 w-full object-cover"
-            />
+            <div className="grid gap-4 sm:grid-cols-3">
+              <GalleryCard
+                src={telecom}
+                tag="Telecom"
+                title="Infraestrutura de dados"
+                className="h-[240px]"
+              />
+              <GalleryCard
+                src={caminhao}
+                tag="Transporte"
+                title="Frota para operação"
+                className="h-[240px]"
+              />
+              <GalleryCard
+                src={frota}
+                tag="Campo"
+                title="Mobilização operacional"
+                className="h-[240px]"
+              />
+            </div>
           </div>
         </div>
       </section>
