@@ -454,12 +454,14 @@ function IndexPage() {
       </section>
 
       <footer className="border-t border-border bg-navy-deep px-6 py-12 md:px-12">
-        <img
-          src={logo.url}
-          alt="PROJETAJ Empreendimentos"
-          loading="lazy"
-          className="mb-8 h-10 w-auto brightness-0 invert"
-        />
+        <div className="mb-8 inline-flex bg-background px-5 py-3">
+          <img
+            src={logo.url}
+            alt="PROJETAJ Empreendimentos"
+            loading="lazy"
+            className="h-9 w-auto"
+          />
+        </div>
         <p className="label-caps text-white/60">
           © 2026 PROJETAJ Empreendimentos — CNPJ 25.204.592/0001-94
         </p>
