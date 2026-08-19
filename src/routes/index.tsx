@@ -335,31 +335,31 @@ function IndexPage() {
             title="Motoniveladora em campo"
             className="h-[280px] lg:h-full lg:min-h-[520px]"
           />
-          <div className="grid gap-4">
+          <div className="grid gap-4 lg:grid-rows-2">
             <GalleryCard
               src={reforma}
               tag="Reformas"
               title="Ambiente corporativo renovado"
-              className="h-[240px]"
+              className="h-[240px] lg:h-full"
             />
             <div className="grid gap-4 sm:grid-cols-3">
               <GalleryCard
                 src={telecom}
                 tag="Telecom"
                 title="Infraestrutura de dados"
-                className="h-[240px]"
+                className="h-[240px] lg:h-full"
               />
               <GalleryCard
                 src={caminhao}
                 tag="Transporte"
                 title="Frota para operação"
-                className="h-[240px]"
+                className="h-[240px] lg:h-full"
               />
               <GalleryCard
                 src={frota}
                 tag="Campo"
                 title="Mobilização operacional"
-                className="h-[240px]"
+                className="h-[240px] lg:h-full"
               />
             </div>
           </div>
