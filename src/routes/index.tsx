@@ -1,10 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, MessageCircle } from "lucide-react";
+import logo from "@/assets/projetaj-logo.png.asset.json";
 import heroObras from "@/assets/operacao.jpg";
 import frota from "@/assets/frota.jpg";
 import terraplenagem from "@/assets/terraplenagem.jpg";
 import pavimentacao from "@/assets/pavimentacao.jpg";
 import caminhao from "@/assets/caminhao.jpg";
+import reforma from "@/assets/reforma.jpg";
+import telecom from "@/assets/telecom.jpg";
 import equipes from "@/assets/equipes-terceirizacao.jpg";
 
 export const Route = createFileRoute("/")({
@@ -61,6 +64,8 @@ const SERVICES = [
       "Telecom e climatização",
     ],
     img: pavimentacao,
+    img2: reforma,
+    img2Alt: "Ambiente corporativo reformado pela PROJETAJ",
   },
   {
     n: "02",
@@ -75,7 +80,9 @@ const SERVICES = [
       "Caminhões",
       "Carros e utilitários",
     ],
-    img: caminhao,
+    img: frota,
+    img2: caminhao,
+    img2Alt: "Caminhão caçamba da frota PROJETAJ",
   },
   {
     n: "03",
@@ -91,6 +98,8 @@ const SERVICES = [
       "Supervisão",
     ],
     img: equipes,
+    img2: heroObras,
+    img2Alt: "Equipe PROJETAJ mobilizada em campo",
   },
 ];
 
@@ -123,12 +132,55 @@ const STEPS = [
 ];
 
 function Index() {
+  return <IndexPage />;
+}
+
+function GalleryTile({
+  img,
+  tag,
+  caption,
+  className,
+}: {
+  img: string;
+  tag: string;
+  caption: string;
+  className?: string;
+}) {
+  return (
+    <figure className={`relative m-0 overflow-hidden ${className ?? ""}`}>
+      <img
+        src={img}
+        alt={caption}
+        loading="lazy"
+        width={1200}
+        height={900}
+        className="h-full w-full object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/90 via-navy-deep/10 to-transparent" />
+      <figcaption className="absolute inset-x-0 bottom-0 p-5">
+        <span className="label-caps flex items-center gap-2 text-white/80">
+          <span className="inline-block h-[2px] w-6 bg-brand-red" />
+          {tag}
+        </span>
+        <p className="mt-2 font-display text-xl font-bold leading-tight text-primary-foreground">
+          {caption}
+        </p>
+      </figcaption>
+    </figure>
+  );
+}
+
+function IndexPage() {
   return (
     <div className="bg-background">
       <header className="sticky top-0 z-30 flex items-center justify-between gap-6 border-b border-border bg-background/95 px-6 py-4 backdrop-blur md:px-12">
-        <span className="font-display text-lg font-bold tracking-[0.2em] text-navy">
-          PROJETAJ
-        </span>
+        <Link to="/" className="flex items-center">
+          <img
+            src={logo.url}
+            alt="PROJETAJ Empreendimentos — 10 anos"
+            className="h-8 w-auto md:h-10"
+          />
+        </Link>
         <nav className="hidden items-center gap-8 md:flex">
           {NAV.map((n) => (
             <a
@@ -195,11 +247,11 @@ function Index() {
         {SERVICES.map((s, i) => (
           <article
             key={s.n}
-            className={`grid border-b border-border lg:grid-cols-2 ${
+            className={`grid border-b border-border lg:h-[740px] lg:grid-cols-2 ${
               i % 2 === 1 ? "lg:[&>figure]:order-first" : ""
             }`}
           >
-            <div className="px-6 py-16 md:px-12">
+            <div className="flex flex-col overflow-hidden px-6 py-16 md:px-12">
               <p className="label-caps text-brand-red">
                 {s.n} — {s.title}
               </p>
@@ -219,6 +271,16 @@ function Index() {
                   </li>
                 ))}
               </ul>
+              {s.img2 ? (
+                <img
+                  src={s.img2}
+                  alt={s.img2Alt}
+                  loading="lazy"
+                  width={1200}
+                  height={800}
+                  className="mt-8 h-48 w-full max-w-xl flex-1 object-cover lg:h-auto lg:min-h-0"
+                />
+              ) : null}
             </div>
             <figure className="m-0">
               <img
@@ -271,25 +333,56 @@ function Index() {
           </Link>
         </div>
         <div className="border-t border-border px-6 py-16 md:px-12 lg:border-l lg:border-t-0">
-          <p className="label-caps text-muted-foreground">Registros da operação</p>
-          <h3 className="mt-5 text-2xl text-navy">Trabalho que fala por si.</h3>
-          <div className="mt-8 grid grid-cols-2 gap-4">
-            <img
-              src={frota}
-              alt="Retroescavadeira da frota em operação"
-              loading="lazy"
-              width={1200}
-              height={900}
-              className="h-40 w-full object-cover"
+          <p className="label-caps text-muted-foreground">Cobertura</p>
+          <h3 className="mt-5 text-2xl text-navy">
+            Do Nordeste ao Centro-Oeste, com base local.
+          </h3>
+          <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+            Frota, equipes e suprimentos deslocados conforme o cronograma de
+            cada contrato, com acompanhamento técnico em campo.
+          </p>
+        </div>
+      </section>
+
+      <section className="border-b border-border bg-navy-deep px-6 py-20 md:px-12">
+        <p className="label-caps text-brand-red">Registros da operação</p>
+        <h2 className="mt-5 max-w-3xl text-3xl leading-tight text-primary-foreground md:text-5xl">
+          Trabalho que fala por si.
+        </h2>
+        <div className="mt-12 grid gap-4 lg:grid-cols-2">
+          <GalleryTile
+            img={terraplenagem}
+            tag="Frota"
+            caption="Motoniveladora em campo"
+            className="h-[320px] lg:h-[560px]"
+          />
+          <div className="grid gap-4">
+            <GalleryTile
+              img={reforma}
+              tag="Reformas"
+              caption="Ambiente corporativo renovado"
+              className="h-[260px]"
             />
-            <img
-              src={terraplenagem}
-              alt="Motoniveladora em serviço de terraplenagem"
-              loading="lazy"
-              width={1200}
-              height={900}
-              className="h-40 w-full object-cover"
-            />
+            <div className="grid gap-4 sm:grid-cols-3">
+              <GalleryTile
+                img={telecom}
+                tag="Telecom"
+                caption="Infraestrutura de dados"
+                className="h-[260px]"
+              />
+              <GalleryTile
+                img={caminhao}
+                tag="Transporte"
+                caption="Frota para operação"
+                className="h-[260px]"
+              />
+              <GalleryTile
+                img={frota}
+                tag="Campo"
+                caption="Mobilização operacional"
+                className="h-[260px]"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -334,8 +427,16 @@ function Index() {
             <dt className="label-caps text-muted-foreground">
               Telefone e WhatsApp
             </dt>
-            <dd className="mt-2 text-navy">
-              <a href="tel:+5574999176066">(74) 99917-6066</a>
+            <dd className="mt-2">
+              <a
+                href="https://wa.me/5574999176066?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20a%20PROJETAJ%20sobre%20um%20projeto."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-navy underline decoration-brand-red decoration-2 underline-offset-4 transition-colors hover:text-brand-red"
+              >
+                <MessageCircle className="h-4 w-4 text-brand-red" />
+                (74) 99917-6066
+              </a>
             </dd>
           </div>
           <div>
@@ -358,6 +459,14 @@ function Index() {
       </section>
 
       <footer className="border-t border-border bg-navy-deep px-6 py-12 md:px-12">
+        <div className="mb-8 inline-flex bg-background px-5 py-3">
+          <img
+            src={logo.url}
+            alt="PROJETAJ Empreendimentos"
+            loading="lazy"
+            className="h-9 w-auto"
+          />
+        </div>
         <p className="label-caps text-white/60">
           © 2026 PROJETAJ Empreendimentos — CNPJ 25.204.592/0001-94
         </p>
