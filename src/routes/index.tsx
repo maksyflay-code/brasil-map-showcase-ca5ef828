@@ -335,14 +335,14 @@ function IndexPage() {
             title="Motoniveladora em campo"
             className="h-[280px] lg:h-full lg:min-h-[520px]"
           />
-          <div className="grid gap-4 lg:grid-rows-2">
+          <div className="flex flex-col gap-4">
             <GalleryCard
               src={reforma}
               tag="Reformas"
               title="Ambiente corporativo renovado"
-              className="h-[240px] lg:h-full"
+              className="h-[240px] lg:h-auto lg:flex-1"
             />
-            <div className="grid gap-4 sm:grid-cols-3">
+            <div className="grid gap-4 sm:grid-cols-3 lg:flex-1">
               <GalleryCard
                 src={telecom}
                 tag="Telecom"
