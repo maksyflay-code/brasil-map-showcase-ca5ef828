@@ -64,6 +64,7 @@ const SERVICES = [
       "Telecom e climatização",
     ],
     img: pavimentacao,
+    img2: reforma,
   },
   {
     n: "02",
@@ -78,7 +79,7 @@ const SERVICES = [
       "Caminhões",
       "Carros e utilitários",
     ],
-    img: caminhao,
+    img: frota,
   },
   {
     n: "03",
