@@ -127,6 +127,45 @@ const STEPS = [
 ];
 
 function Index() {
+  return <IndexPage />;
+}
+
+function GalleryTile({
+  img,
+  tag,
+  caption,
+  className,
+}: {
+  img: string;
+  tag: string;
+  caption: string;
+  className?: string;
+}) {
+  return (
+    <figure className={`relative m-0 overflow-hidden ${className ?? ""}`}>
+      <img
+        src={img}
+        alt={caption}
+        loading="lazy"
+        width={1200}
+        height={900}
+        className="h-full w-full object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/90 via-navy-deep/10 to-transparent" />
+      <figcaption className="absolute inset-x-0 bottom-0 p-5">
+        <span className="label-caps flex items-center gap-2 text-white/80">
+          <span className="inline-block h-[2px] w-6 bg-brand-red" />
+          {tag}
+        </span>
+        <p className="mt-2 font-display text-xl font-bold leading-tight text-primary-foreground">
+          {caption}
+        </p>
+      </figcaption>
+    </figure>
+  );
+}
+
+function IndexPage() {
   return (
     <div className="bg-background">
       <header className="sticky top-0 z-30 flex items-center justify-between gap-6 border-b border-border bg-background/95 px-6 py-4 backdrop-blur md:px-12">
