@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Check } from "lucide-react";
 import { BRAZIL_STATES, MAP_HEIGHT, MAP_WIDTH } from "@/data/brazil-map";
 import { SERVED_UFS } from "@/data/served-states";
+import logo from "@/assets/projetaj-logo.png.asset.json";
 
 function MiniMap() {
   return (
@@ -61,8 +62,15 @@ function Item({
 export function CredentialsRail() {
   return (
     <aside className="fixed inset-y-0 left-0 z-40 hidden h-screen w-[150px] flex-col overflow-hidden border-r-4 border-brand-red bg-navy-deep lg:flex">
-      <div className="border-b border-white/10 py-2 text-center text-[0.58rem] uppercase tracking-[0.14em] text-white/50">
-        Credenciais
+      <div className="border-b border-white/10 px-3 py-2 text-center">
+        <img
+          src={logo.url}
+          alt="PROJETAJ Empreendimentos — 10 anos"
+          className="mx-auto w-full brightness-0 invert"
+        />
+        <p className="mt-2 text-[0.58rem] uppercase tracking-[0.14em] text-white/50">
+          Selos
+        </p>
       </div>
 
       <div className="flex flex-1 flex-col">
