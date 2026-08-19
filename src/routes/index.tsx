@@ -1,10 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, MessageCircle } from "lucide-react";
+import logo from "@/assets/projetaj-logo.png.asset.json";
 import heroObras from "@/assets/operacao.jpg";
 import frota from "@/assets/frota.jpg";
 import terraplenagem from "@/assets/terraplenagem.jpg";
 import pavimentacao from "@/assets/pavimentacao.jpg";
 import caminhao from "@/assets/caminhao.jpg";
+import reforma from "@/assets/reforma.jpg";
+import telecom from "@/assets/telecom.jpg";
 import equipes from "@/assets/equipes-terceirizacao.jpg";
 
 export const Route = createFileRoute("/")({
