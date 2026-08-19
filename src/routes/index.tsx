@@ -4,9 +4,8 @@ import logo from "@/assets/projetaj-logo.png.asset.json";
 import heroObras from "@/assets/operacao.jpg";
 import frota from "@/assets/frota.jpg";
 import terraplenagem from "@/assets/terraplenagem.jpg";
-import pavimentacao from "@/assets/pavimentacao.jpg";
+import pavimentacao from "@/assets/pavimentacao-obras.jpg.asset.json";
 import caminhao from "@/assets/caminhao.jpg";
-import reforma from "@/assets/reforma.jpg";
 import telecom from "@/assets/telecom.jpg";
 import equipes from "@/assets/equipes-terceirizacao.jpg";
 
@@ -63,9 +62,7 @@ const SERVICES = [
       "Elétrica complexa",
       "Telecom e climatização",
     ],
-    img: pavimentacao,
-    img2: reforma,
-    img2Alt: "Ambiente corporativo reformado pela PROJETAJ",
+    img: pavimentacao.url,
   },
   {
     n: "02",
