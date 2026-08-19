@@ -6,6 +6,8 @@ import terraplenagem from "@/assets/terraplenagem.jpg";
 import pavimentacao from "@/assets/pavimentacao.jpg";
 import caminhao from "@/assets/caminhao.jpg";
 import equipes from "@/assets/equipes-terceirizacao.jpg";
+import reforma from "@/assets/reforma.jpg";
+import telecom from "@/assets/telecom.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -123,6 +125,44 @@ const STEPS = [
 ];
 
 function Index() {
+  return <IndexPage />;
+}
+
+function GalleryCard({
+  src,
+  tag,
+  title,
+  className = "",
+}: {
+  src: string;
+  tag: string;
+  title: string;
+  className?: string;
+}) {
+  return (
+    <figure className={`relative m-0 overflow-hidden ${className}`}>
+      <img
+        src={src}
+        alt={title}
+        loading="lazy"
+        width={1200}
+        height={900}
+        className="h-full w-full object-cover"
+      />
+      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy-deep/95 to-transparent p-4 pt-12">
+        <span className="label-caps flex items-center gap-2 text-brand-red">
+          <span className="h-[2px] w-5 bg-brand-red" />
+          {tag}
+        </span>
+        <figcaption className="mt-1 font-display text-base font-bold text-primary-foreground">
+          {title}
+        </figcaption>
+      </div>
+    </figure>
+  );
+}
+
+function IndexPage() {
   return (
     <div className="bg-background">
       <header className="sticky top-0 z-30 flex items-center justify-between gap-6 border-b border-border bg-background/95 px-6 py-4 backdrop-blur md:px-12">
@@ -271,25 +311,57 @@ function Index() {
           </Link>
         </div>
         <div className="border-t border-border px-6 py-16 md:px-12 lg:border-l lg:border-t-0">
-          <p className="label-caps text-muted-foreground">Registros da operação</p>
-          <h3 className="mt-5 text-2xl text-navy">Trabalho que fala por si.</h3>
-          <div className="mt-8 grid grid-cols-2 gap-4">
-            <img
-              src={frota}
-              alt="Retroescavadeira da frota em operação"
-              loading="lazy"
-              width={1200}
-              height={900}
-              className="h-40 w-full object-cover"
+          <p className="label-caps text-muted-foreground">Cobertura</p>
+          <h3 className="mt-5 text-2xl text-navy">
+            Equipes locais, logística própria.
+          </h3>
+          <p className="mt-5 max-w-lg text-sm leading-relaxed text-muted-foreground">
+            Mobilizamos frota e pessoas a partir da Bahia para contratos em todo
+            o país, com acompanhamento em campo do início ao encerramento.
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-navy-deep px-6 py-20 md:px-12">
+        <p className="label-caps text-brand-red">Registros da operação</p>
+        <h2 className="mt-5 text-3xl leading-tight text-primary-foreground md:text-5xl">
+          Trabalho que fala por si.
+        </h2>
+
+        <div className="mt-12 grid gap-4 lg:grid-cols-2">
+          <GalleryCard
+            src={terraplenagem}
+            tag="Frota"
+            title="Motoniveladora em campo"
+            className="h-[280px] lg:h-full lg:min-h-[520px]"
+          />
+          <div className="flex flex-col gap-4">
+            <GalleryCard
+              src={reforma}
+              tag="Reformas"
+              title="Ambiente corporativo renovado"
+              className="h-[240px] lg:h-auto lg:flex-1"
             />
-            <img
-              src={terraplenagem}
-              alt="Motoniveladora em serviço de terraplenagem"
-              loading="lazy"
-              width={1200}
-              height={900}
-              className="h-40 w-full object-cover"
-            />
+            <div className="grid gap-4 sm:grid-cols-3 lg:flex-1">
+              <GalleryCard
+                src={telecom}
+                tag="Telecom"
+                title="Infraestrutura de dados"
+                className="h-[240px] lg:h-full"
+              />
+              <GalleryCard
+                src={caminhao}
+                tag="Transporte"
+                title="Frota para operação"
+                className="h-[240px] lg:h-full"
+              />
+              <GalleryCard
+                src={frota}
+                tag="Campo"
+                title="Mobilização operacional"
+                className="h-[240px] lg:h-full"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -335,7 +407,14 @@ function Index() {
               Telefone e WhatsApp
             </dt>
             <dd className="mt-2 text-navy">
-              <a href="tel:+5574999176066">(74) 99917-6066</a>
+              <a
+                href="https://wa.me/5574999176066?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20a%20PROJETAJ."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline decoration-brand-red decoration-2 underline-offset-4"
+              >
+                (74) 99917-6066
+              </a>
             </dd>
           </div>
           <div>
