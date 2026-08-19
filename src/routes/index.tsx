@@ -65,6 +65,7 @@ const SERVICES = [
     ],
     img: pavimentacao,
     img2: reforma,
+    img2Alt: "Ambiente corporativo reformado pela PROJETAJ",
   },
   {
     n: "02",
@@ -80,6 +81,8 @@ const SERVICES = [
       "Carros e utilitários",
     ],
     img: frota,
+    img2: caminhao,
+    img2Alt: "Caminhão caçamba da frota PROJETAJ",
   },
   {
     n: "03",
@@ -95,6 +98,8 @@ const SERVICES = [
       "Supervisão",
     ],
     img: equipes,
+    img2: heroObras,
+    img2Alt: "Equipe PROJETAJ mobilizada em campo",
   },
 ];
 
