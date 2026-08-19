@@ -335,7 +335,14 @@ function Index() {
               Telefone e WhatsApp
             </dt>
             <dd className="mt-2 text-navy">
-              <a href="tel:+5574999176066">(74) 99917-6066</a>
+              <a
+                href="https://wa.me/5574999176066?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20a%20PROJETAJ."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline decoration-brand-red decoration-2 underline-offset-4"
+              >
+                (74) 99917-6066
+              </a>
             </dd>
           </div>
           <div>
