@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
+import logo from "@/assets/projetaj-logo.png.asset.json";
 import heroObras from "@/assets/operacao.jpg";
 import frota from "@/assets/frota.jpg";
 import terraplenagem from "@/assets/terraplenagem.jpg";
@@ -166,9 +167,11 @@ function IndexPage() {
   return (
     <div className="bg-background">
       <header className="sticky top-0 z-30 flex items-center justify-between gap-6 border-b border-border bg-background/95 px-6 py-4 backdrop-blur md:px-12">
-        <span className="font-display text-lg font-bold tracking-[0.2em] text-navy">
-          PROJETAJ
-        </span>
+        <img
+          src={logo.url}
+          alt="PROJETAJ Empreendimentos — 10 anos"
+          className="h-10 w-auto"
+        />
         <nav className="hidden items-center gap-8 md:flex">
           {NAV.map((n) => (
             <a
