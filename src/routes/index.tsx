@@ -6,6 +6,8 @@ import terraplenagem from "@/assets/terraplenagem.jpg";
 import pavimentacao from "@/assets/pavimentacao.jpg";
 import caminhao from "@/assets/caminhao.jpg";
 import equipes from "@/assets/equipes-terceirizacao.jpg";
+import reforma from "@/assets/reforma.jpg";
+import telecom from "@/assets/telecom.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
