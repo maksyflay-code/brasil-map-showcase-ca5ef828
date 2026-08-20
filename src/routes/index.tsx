@@ -238,7 +238,7 @@ function IndexPage() {
         {SERVICES.map((s, i) => (
           <article
             key={s.n}
-            className={`grid border-b border-border lg:grid-cols-2 ${
+            className={`grid border-b border-border lg:grid-cols-2 lg:items-start ${
               i % 2 === 1 ? "lg:[&>figure]:order-first" : ""
             }`}
           >
@@ -263,14 +263,14 @@ function IndexPage() {
                 ))}
               </ul>
             </div>
-            <figure className="m-0">
+            <figure className="m-0 aspect-[4/3] lg:sticky lg:top-20 lg:aspect-auto lg:h-[420px]">
               <img
                 src={s.img}
                 alt={s.title}
                 loading="lazy"
                 width={1200}
                 height={900}
-                className="h-full min-h-[320px] w-full object-cover"
+                className="h-full w-full object-cover"
               />
             </figure>
           </article>
