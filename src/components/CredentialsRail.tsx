@@ -2,13 +2,12 @@ import { Link } from "@tanstack/react-router";
 import { Check } from "lucide-react";
 import { BRAZIL_STATES, MAP_HEIGHT, MAP_WIDTH } from "@/data/brazil-map";
 import { SERVED_UFS } from "@/data/served-states";
-import logo from "@/assets/projetaj-logo.png.asset.json";
 
-function MiniMap() {
+function MiniMap({ className }: { className?: string }) {
   return (
     <svg
       viewBox={`0 0 ${MAP_WIDTH} ${MAP_HEIGHT}`}
-      className="mx-auto h-14 w-auto"
+      className={className ?? "mx-auto h-14 w-auto"}
       role="img"
       aria-label="Mapa do Brasil com estados atendidos"
     >
@@ -28,7 +27,7 @@ function MiniMap() {
   );
 }
 
-function Item({
+function DesktopItem({
   title,
   sub,
   to,
@@ -59,7 +58,36 @@ function Item({
   );
 }
 
-export function CredentialsRail() {
+function MobileItem({
+  title,
+  to,
+  hash,
+  children,
+}: {
+  title: string;
+  to: string;
+  hash?: string;
+  children?: React.ReactNode;
+}) {
+  return (
+    <Link
+      to={to}
+      {...(hash ? { hash } : {})}
+      className="group flex flex-1 flex-col items-center justify-center gap-1 px-2 py-2 text-center transition-colors hover:bg-white/5"
+    >
+      {children ? (
+        children
+      ) : (
+        <Check className="h-3 w-3 text-brand-red" strokeWidth={3} />
+      )}
+      <p className="font-display text-[0.65rem] font-bold uppercase leading-none tracking-tight text-white underline decoration-brand-red decoration-2 underline-offset-2 group-hover:decoration-white">
+        {title}
+      </p>
+    </Link>
+  );
+}
+
+function DesktopRail() {
   return (
     <aside className="fixed inset-y-0 left-0 z-40 hidden h-screen w-[150px] flex-col overflow-hidden border-r-4 border-brand-red bg-navy-deep lg:flex">
       <div className="border-b border-white/10 px-3 py-4 text-center">
@@ -69,21 +97,56 @@ export function CredentialsRail() {
       </div>
 
       <div className="flex flex-1 flex-col">
-        <Item to="/" hash="quem-somos" title="10 Anos" sub="Trajetória contínua" />
+        <DesktopItem
+          to="/"
+          hash="quem-somos"
+          title="10 Anos"
+          sub="Trajetória contínua"
+        />
 
-        <Item to="/atuacao" title="12 Estados" sub="Ver mapa nacional">
+        <DesktopItem to="/atuacao" title="12 Estados" sub="Ver mapa nacional">
           <MiniMap />
-        </Item>
+        </DesktopItem>
 
-        <Item to="/" hash="crea" title="CREA" sub="Empresa registrada" />
-        <Item
+        <DesktopItem to="/" hash="crea" title="CREA" sub="Empresa registrada" />
+        <DesktopItem
           to="/"
           hash="regularidade"
           title="Regularidade"
           sub="Certidões verificáveis"
         />
-        <Item to="/" hash="lgpd" title="LGPD" sub="Canal de privacidade" />
+        <DesktopItem to="/" hash="lgpd" title="LGPD" sub="Canal de privacidade" />
       </div>
     </aside>
+  );
+}
+
+function MobileRail() {
+  return (
+    <nav className="fixed top-0 left-0 right-0 z-50 flex h-16 flex-col lg:hidden">
+      <div className="flex items-center justify-center border-b border-white/10 bg-navy-deep px-3 py-1">
+        <p className="text-[0.58rem] uppercase tracking-[0.14em] text-white/50">
+          Selos
+        </p>
+      </div>
+      <div className="flex flex-1 items-stretch overflow-x-auto border-b-4 border-brand-red bg-navy-deep">
+        <MobileItem to="/" hash="quem-somos" title="10 Anos" />
+        <MobileItem to="/atuacao" title="12 Estados">
+          <MiniMap className="h-6 w-auto" />
+        </MobileItem>
+        <MobileItem to="/" hash="crea" title="CREA" />
+        <MobileItem to="/" hash="regularidade" title="Regularidade" />
+        <MobileItem to="/" hash="lgpd" title="LGPD" />
+      </div>
+    </nav>
+  );
+}
+
+export function CredentialsRail() {
+  return (
+    <>
+      <DesktopRail />
+      <MobileRail />
+    </>
   );
 }
