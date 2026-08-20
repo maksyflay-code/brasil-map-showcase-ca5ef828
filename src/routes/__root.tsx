@@ -137,7 +137,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <CredentialsRail />
-      <div className="lg:pl-[150px]">
+      <div className="pt-16 lg:pt-0 lg:pl-[150px]">
         {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
         <Outlet />
       </div>
