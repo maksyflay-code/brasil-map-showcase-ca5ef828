@@ -60,7 +60,6 @@ function Atuacao() {
           >
             {BRAZIL_STATES.map((s) => {
               const served = SERVED_UFS.includes(s.uf);
-              const isActive = s.uf === active;
               return (
                 <path
                   key={s.uf}
@@ -70,11 +69,11 @@ function Atuacao() {
                   className={[
                     "stroke-background transition-colors",
                     served ? "cursor-pointer" : "",
-                    isActive
-                      ? "fill-brand-red"
-                      : served
-                        ? "fill-navy hover:fill-brand-red"
-                        : "fill-border",
+                    served
+                      ? s.uf === "BA"
+                        ? "fill-brand-red"
+                        : "fill-brand-blue"
+                      : "fill-border",
                   ].join(" ")}
                   strokeWidth={2}
                 >
@@ -85,8 +84,11 @@ function Atuacao() {
           </svg>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-6">
-            <span className="label-caps flex items-center gap-2 text-navy">
-              <span className="inline-block h-3 w-3 bg-navy" /> Atendemos
+            <span className="label-caps flex items-center gap-2 text-brand-blue">
+              <span className="inline-block h-3 w-3 bg-brand-blue" /> Atendemos
+            </span>
+            <span className="label-caps flex items-center gap-2 text-brand-red">
+              <span className="inline-block h-3 w-3 bg-brand-red" /> Sede — Bahia
             </span>
             <span className="label-caps flex items-center gap-2 text-muted-foreground">
               <span className="inline-block h-3 w-3 bg-border" /> Sob consulta
@@ -101,7 +103,8 @@ function Atuacao() {
           </h2>
           <div className="rule-red mt-6 w-16" />
           <p className="mt-6 text-sm leading-relaxed text-white/70">
-            {SERVED_DETAILS[active]}
+            A PROJETAJ atua neste estado com obras, locação de equipamentos e
+            terceirização de mão de obra, conforme a demanda de cada contrato.
           </p>
 
           <p className="label-caps mt-12 text-white/60">Todos os estados</p>
