@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import { BRAZIL_STATES, MAP_HEIGHT, MAP_WIDTH } from "@/data/brazil-map";
-import { SERVED_DETAILS, SERVED_UFS } from "@/data/served-states";
+import { SERVED_UFS } from "@/data/served-states";
 
 export const Route = createFileRoute("/atuacao")({
   component: Atuacao,
