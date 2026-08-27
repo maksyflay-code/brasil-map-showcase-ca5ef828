@@ -11,6 +11,9 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AtuacaoRouteImport } from './routes/atuacao'
+import { Route as CreaRouteImport } from './routes/crea'
+import { Route as LgpdRouteImport } from './routes/lgpd'
+import { Route as RegularidadeRouteImport } from './routes/regularidade'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -22,31 +25,58 @@ const AtuacaoRoute = AtuacaoRouteImport.update({
   path: '/atuacao',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CreaRoute = CreaRouteImport.update({
+  id: '/crea',
+  path: '/crea',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LgpdRoute = LgpdRouteImport.update({
+  id: '/lgpd',
+  path: '/lgpd',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RegularidadeRoute = RegularidadeRouteImport.update({
+  id: '/regularidade',
+  path: '/regularidade',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/atuacao': typeof AtuacaoRoute
+  '/crea': typeof CreaRoute
+  '/lgpd': typeof LgpdRoute
+  '/regularidade': typeof RegularidadeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/atuacao': typeof AtuacaoRoute
+  '/crea': typeof CreaRoute
+  '/lgpd': typeof LgpdRoute
+  '/regularidade': typeof RegularidadeRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/atuacao': typeof AtuacaoRoute
+  '/crea': typeof CreaRoute
+  '/lgpd': typeof LgpdRoute
+  '/regularidade': typeof RegularidadeRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/atuacao'
+  fullPaths: '/' | '/atuacao' | '/crea' | '/lgpd' | '/regularidade'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/atuacao'
-  id: '__root__' | '/' | '/atuacao'
+  to: '/' | '/atuacao' | '/crea' | '/lgpd' | '/regularidade'
+  id: '__root__' | '/' | '/atuacao' | '/crea' | '/lgpd' | '/regularidade'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AtuacaoRoute: typeof AtuacaoRoute
+  CreaRoute: typeof CreaRoute
+  LgpdRoute: typeof LgpdRoute
+  RegularidadeRoute: typeof RegularidadeRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -65,12 +95,36 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AtuacaoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/crea': {
+      id: '/crea'
+      path: '/crea'
+      fullPath: '/crea'
+      preLoaderRoute: typeof CreaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lgpd': {
+      id: '/lgpd'
+      path: '/lgpd'
+      fullPath: '/lgpd'
+      preLoaderRoute: typeof LgpdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/regularidade': {
+      id: '/regularidade'
+      path: '/regularidade'
+      fullPath: '/regularidade'
+      preLoaderRoute: typeof RegularidadeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AtuacaoRoute: AtuacaoRoute,
+  CreaRoute: CreaRoute,
+  LgpdRoute: LgpdRoute,
+  RegularidadeRoute: RegularidadeRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

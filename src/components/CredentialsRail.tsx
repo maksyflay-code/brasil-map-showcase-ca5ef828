@@ -108,14 +108,21 @@ function DesktopRail() {
           <MiniMap />
         </DesktopItem>
 
-        <DesktopItem to="/" hash="crea" title="CREA" sub="Empresa registrada" />
         <DesktopItem
-          to="/"
-          hash="regularidade"
+          to="/crea"
+          title="CREA"
+          sub="Empresa registrada"
+        />
+        <DesktopItem
+          to="/regularidade"
           title="Regularidade"
           sub="Certidões verificáveis"
         />
-        <DesktopItem to="/" hash="lgpd" title="LGPD" sub="Canal de privacidade" />
+        <DesktopItem
+          to="/lgpd"
+          title="LGPD"
+          sub="Canal de privacidade"
+        />
       </div>
     </aside>
   );
@@ -134,9 +141,9 @@ function MobileRail() {
         <MobileItem to="/atuacao" title="12 Estados">
           <MiniMap className="h-6 w-auto" />
         </MobileItem>
-        <MobileItem to="/" hash="crea" title="CREA" />
-        <MobileItem to="/" hash="regularidade" title="Regularidade" />
-        <MobileItem to="/" hash="lgpd" title="LGPD" />
+        <MobileItem to="/crea" title="CREA" />
+        <MobileItem to="/regularidade" title="Regularidade" />
+        <MobileItem to="/lgpd" title="LGPD" />
       </div>
     </nav>
   );
