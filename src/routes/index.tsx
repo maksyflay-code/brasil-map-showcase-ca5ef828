@@ -379,17 +379,23 @@ function IndexPage() {
         </h2>
         <div className="mt-12 grid gap-px md:grid-cols-3">
           {CREDENTIALS.map((c) => (
-            <div
+            <Link
               key={c.id}
-              id={c.id}
-              className="scroll-mt-24 border-t-2 border-brand-red pt-5 md:pr-8"
+              to={`/${c.id}` as "/crea" | "/regularidade" | "/lgpd"}
+              className="group scroll-mt-24 border-t-2 border-brand-red pt-5 md:pr-8"
             >
               <span className="label-caps text-brand-red">{c.label}</span>
-              <p className="mt-3 font-display text-2xl text-navy">{c.title}</p>
+              <p className="mt-3 font-display text-2xl text-navy underline decoration-brand-red/0 decoration-2 underline-offset-4 transition-colors group-hover:decoration-brand-red">
+                {c.title}
+              </p>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                 {c.text}
               </p>
-            </div>
+              <span className="label-caps mt-4 inline-flex items-center gap-2 text-brand-red">
+                Ver detalhes
+                <ArrowUpRight className="h-3.5 w-3.5" />
+              </span>
+            </Link>
           ))}
         </div>
       </section>
