@@ -72,7 +72,7 @@ function Atuacao() {
                     served
                       ? s.uf === "BA"
                         ? "fill-brand-red"
-                        : "fill-brand-blue"
+                        : "fill-navy"
                       : "fill-border",
                   ].join(" ")}
                   strokeWidth={2}
@@ -84,8 +84,8 @@ function Atuacao() {
           </svg>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-6">
-            <span className="label-caps flex items-center gap-2 text-brand-blue">
-              <span className="inline-block h-3 w-3 bg-brand-blue" /> Atendemos
+            <span className="label-caps flex items-center gap-2 text-navy">
+              <span className="inline-block h-3 w-3 bg-navy" /> Atendemos
             </span>
             <span className="label-caps flex items-center gap-2 text-brand-red">
               <span className="inline-block h-3 w-3 bg-brand-red" /> Sede — Bahia
