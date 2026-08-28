@@ -19,7 +19,7 @@ function MiniMap({ className }: { className?: string }) {
             SERVED_UFS.includes(s.uf)
               ? s.uf === "BA"
                 ? "fill-brand-red stroke-navy-deep"
-                : "fill-brand-blue stroke-navy-deep"
+                : "fill-navy stroke-navy-deep"
               : "fill-white/25 stroke-navy-deep"
           }
           strokeWidth={2}
