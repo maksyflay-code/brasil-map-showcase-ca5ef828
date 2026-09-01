@@ -141,7 +141,7 @@ const LOCACOES = [
   },
   {
     src: transporte.url,
-    title: "Transporte de máquinas pesadas",
+    title: "Logística de máquinas pesadas",
     tag: "Logística própria",
   },
 ];
