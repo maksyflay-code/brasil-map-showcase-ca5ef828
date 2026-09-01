@@ -2,13 +2,12 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import logo from "@/assets/projetaj-logo.png.asset.json";
 import heroObras from "@/assets/operacao.jpg";
-import frota from "@/assets/frota.jpg";
-import terraplenagem from "@/assets/terraplenagem.jpg";
 import pavimentacao from "@/assets/pavimentacao.jpg";
 import caminhao from "@/assets/caminhao.jpg";
 import equipes from "@/assets/equipes-terceirizacao.jpg";
-import reforma from "@/assets/reforma.jpg";
-import telecom from "@/assets/telecom.jpg";
+import escavadeira from "@/assets/escavadeira-projetaj.jpg.asset.json";
+import compactador from "@/assets/compactador-projetaj.jpg.asset.json";
+import transporte from "@/assets/transporte-projetaj.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -129,39 +128,23 @@ function Index() {
   return <IndexPage />;
 }
 
-function GalleryCard({
-  src,
-  tag,
-  title,
-  className = "",
-}: {
-  src: string;
-  tag: string;
-  title: string;
-  className?: string;
-}) {
-  return (
-    <figure className={`relative m-0 overflow-hidden ${className}`}>
-      <img
-        src={src}
-        alt={title}
-        loading="lazy"
-        width={1200}
-        height={900}
-        className="h-full w-full object-cover"
-      />
-      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy-deep/95 to-transparent p-4 pt-12">
-        <span className="label-caps flex items-center gap-2 text-brand-red">
-          <span className="h-[2px] w-5 bg-brand-red" />
-          {tag}
-        </span>
-        <figcaption className="mt-1 font-display text-base font-bold text-primary-foreground">
-          {title}
-        </figcaption>
-      </div>
-    </figure>
-  );
-}
+const LOCACOES = [
+  {
+    src: escavadeira.url,
+    title: "Escavadeira em operação",
+    tag: "Linha amarela",
+  },
+  {
+    src: compactador.url,
+    title: "Compactador de resíduos",
+    tag: "Equipamentos especiais",
+  },
+  {
+    src: transporte.url,
+    title: "Transporte de máquinas pesadas",
+    tag: "Logística própria",
+  },
+];
 
 function IndexPage() {
   return (
@@ -325,47 +308,39 @@ function IndexPage() {
         </div>
       </section>
 
-      <section className="bg-navy-deep px-6 py-20 md:px-12">
-        <p className="label-caps text-brand-red">Registros da operação</p>
-        <h2 className="mt-5 text-3xl leading-tight text-primary-foreground md:text-5xl">
-          Trabalho que fala por si.
+      <section id="locacoes" className="border-b border-border px-6 py-20 md:px-12">
+        <p className="label-caps text-brand-red">Locações</p>
+        <h2 className="mt-5 max-w-3xl text-3xl leading-tight text-navy md:text-5xl">
+          Equipamentos prontos para o seu contrato.
         </h2>
+        <p className="mt-5 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
+          Da linha amarela aos veículos utilitários, disponibilizamos máquinas e
+          frota com operador, manutenção e logística para órgãos públicos e
+          empresas privadas.
+        </p>
 
-        <div className="mt-12 grid gap-4 lg:grid-cols-2">
-          <GalleryCard
-            src={terraplenagem}
-            tag="Frota"
-            title="Motoniveladora em campo"
-            className="h-[280px] lg:h-full lg:min-h-[520px]"
-          />
-          <div className="flex flex-col gap-4">
-            <GalleryCard
-              src={reforma}
-              tag="Reformas"
-              title="Ambiente corporativo renovado"
-              className="h-[240px] lg:h-auto lg:flex-1"
-            />
-            <div className="grid gap-4 sm:grid-cols-3 lg:flex-1">
-              <GalleryCard
-                src={telecom}
-                tag="Telecom"
-                title="Infraestrutura de dados"
-                className="h-[240px] lg:h-full"
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {LOCACOES.map((l) => (
+            <figure key={l.title} className="group relative m-0 overflow-hidden">
+              <img
+                src={l.src}
+                alt={l.title}
+                loading="lazy"
+                width={1200}
+                height={900}
+                className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <GalleryCard
-                src={caminhao}
-                tag="Transporte"
-                title="Frota para operação"
-                className="h-[240px] lg:h-full"
-              />
-              <GalleryCard
-                src={frota}
-                tag="Campo"
-                title="Mobilização operacional"
-                className="h-[240px] lg:h-full"
-              />
-            </div>
-          </div>
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy-deep/95 to-transparent p-4 pt-12">
+                <span className="label-caps flex items-center gap-2 text-brand-red">
+                  <span className="h-[2px] w-5 bg-brand-red" />
+                  {l.tag}
+                </span>
+                <figcaption className="mt-1 font-display text-base font-bold text-primary-foreground">
+                  {l.title}
+                </figcaption>
+              </div>
+            </figure>
+          ))}
         </div>
       </section>
 
