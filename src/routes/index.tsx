@@ -6,7 +6,7 @@ import pavimentacao from "@/assets/pavimentacao.jpg";
 import caminhao from "@/assets/caminhao.jpg";
 import equipes from "@/assets/equipes-terceirizacao.jpg";
 import escavadeira from "@/assets/escavadeira-projetaj.jpg.asset.json";
-import compactador from "@/assets/compactador-projetaj.jpg.asset.json";
+import compactador from "@/assets/compactador-projetaj.png.asset.json";
 import transporte from "@/assets/transporte-projetaj.jpg.asset.json";
 import frotaAutomoveis from "@/assets/frota-automoveis.jpg.asset.json";
 
