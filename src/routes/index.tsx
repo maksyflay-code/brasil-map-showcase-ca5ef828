@@ -145,6 +145,11 @@ const LOCACOES = [
     title: "Logística de máquinas pesadas",
     tag: "Logística própria",
   },
+  {
+    src: frotaAutomoveis.url,
+    title: "Locação de automóveis",
+    tag: "Frota de veículos",
+  },
 ];
 
 function IndexPage() {
