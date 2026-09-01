@@ -330,12 +330,12 @@ function IndexPage() {
                 height={900}
                 className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy-deep/95 to-transparent p-4 pt-12">
-                <span className="label-caps flex items-center gap-2 text-brand-red">
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy-deep via-navy-deep/80 to-transparent p-4 pt-16">
+                <span className="label-caps flex items-center gap-2 text-white [text-shadow:0_1px_2px_rgba(0,0,0,0.6)]">
                   <span className="h-[2px] w-5 bg-brand-red" />
                   {l.tag}
                 </span>
-                <figcaption className="mt-1 font-display text-base font-bold text-primary-foreground">
+                <figcaption className="mt-1 font-display text-base font-bold text-primary-foreground [text-shadow:0_1px_2px_rgba(0,0,0,0.6)]">
                   {l.title}
                 </figcaption>
               </div>
