@@ -252,7 +252,7 @@ function IndexPage() {
                 ))}
               </ul>
             </div>
-            <figure className="m-0 aspect-[4/3] lg:sticky lg:top-20 lg:aspect-auto lg:h-[420px]">
+            <figure className="m-0 aspect-[4/3] lg:h-[420px] lg:aspect-auto">
               <img
                 src={s.img}
                 alt={s.title}
