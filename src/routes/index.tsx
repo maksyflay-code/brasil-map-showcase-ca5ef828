@@ -4,6 +4,8 @@ import logo from "@/assets/projetaj-logo.png.asset.json";
 import heroObras from "@/assets/operacao.jpg";
 import pavimentacao from "@/assets/pavimentacao.jpg";
 import caminhao from "@/assets/caminhao.jpg";
+import reforma from "@/assets/reforma.jpg";
+import frota from "@/assets/frota.jpg";
 import equipeInterna from "@/assets/equipe-planejamento-interno.jpeg.asset.json";
 import equipeObra from "@/assets/equipe-planejamento-obra.jpeg.asset.json";
 import escavadeira from "@/assets/escavadeira-projetaj.jpg.asset.json";
@@ -64,7 +66,10 @@ const SERVICES = [
       "Elétrica complexa",
       "Telecom e climatização",
     ],
-    images: [{ src: pavimentacao, alt: "Obras e engenharia" }],
+    images: [
+      { src: pavimentacao, alt: "Obras e engenharia" },
+      { src: reforma, alt: "Ambiente de escritório reformado pela PROJETAJ" },
+    ],
   },
   {
     n: "02",
@@ -79,7 +84,10 @@ const SERVICES = [
       "Caminhões",
       "Carros e utilitários",
     ],
-    images: [{ src: caminhao, alt: "Locação de equipamentos" }],
+    images: [
+      { src: caminhao, alt: "Locação de equipamentos" },
+      { src: frota, alt: "Retroescavadeiras da frota PROJETAJ para locação" },
+    ],
   },
   {
     n: "03",
