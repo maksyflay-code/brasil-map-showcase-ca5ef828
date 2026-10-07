@@ -9,4 +9,4 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 
-- Service images use a shared fixed-size media grid, allowing multiple photos without changing the section dimensions.
+- Service images use the shared ServicePhotos component with manual controls and a fixed-size media area so changing photos never changes section dimensions.
