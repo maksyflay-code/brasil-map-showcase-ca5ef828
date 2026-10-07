@@ -5,7 +5,7 @@ import logo from "@/assets/projetaj-logo.png.asset.json";
 import heroObras from "@/assets/operacao.jpg";
 import pavimentacao from "@/assets/pavimentacao.jpg";
 import caminhao from "@/assets/caminhao.jpg";
-import escavadeiraServico from "@/assets/escavadeira-servico.jpeg.asset.json";
+import escavadeiraServico from "@/assets/escavadeira-horizontal-servico.png.asset.json";
 import equipeInterna from "@/assets/equipe-planejamento-interno.jpeg.asset.json";
 import equipeObra from "@/assets/equipe-planejamento-obra.jpeg.asset.json";
 import escavadeira from "@/assets/escavadeira-projetaj.jpg.asset.json";
@@ -52,7 +52,7 @@ const PILLARS = [
   { n: "04", t: "Presença em campo" },
 ];
 
-const SERVICES: { n: string; title: string; lead: string; text: string; items: string[]; images: { src: string; alt: string; position?: "equipment" }[] }[] = [
+const SERVICES = [
   {
     n: "01",
     title: "Obras e engenharia",
@@ -86,7 +86,7 @@ const SERVICES: { n: string; title: string; lead: string; text: string; items: s
     ],
     images: [
       { src: caminhao, alt: "Locação de equipamentos" },
-      { src: escavadeiraServico.url, alt: "Escavadeira da PROJETAJ em campo para locação", position: "equipment" },
+      { src: escavadeiraServico.url, alt: "Escavadeira da PROJETAJ em campo para locação" },
     ],
   },
   {
