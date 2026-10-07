@@ -5,7 +5,7 @@ import logo from "@/assets/projetaj-logo.png.asset.json";
 import heroObras from "@/assets/operacao.jpg";
 import pavimentacao from "@/assets/pavimentacao.jpg";
 import caminhao from "@/assets/caminhao.jpg";
-import frotaVeiculosServico from "@/assets/frota-veiculos-servico.png.asset.json";
+import retroescavadeira from "@/assets/frota.jpg";
 import equipeInterna from "@/assets/equipe-planejamento-interno.jpeg.asset.json";
 import equipeObra from "@/assets/equipe-planejamento-obra.jpeg.asset.json";
 import escavadeira from "@/assets/escavadeira-projetaj.jpg.asset.json";
@@ -86,7 +86,7 @@ const SERVICES = [
     ],
     images: [
       { src: caminhao, alt: "Locação de equipamentos" },
-      { src: frotaVeiculosServico.url, alt: "Frota de veículos Volkswagen da PROJETAJ para locação" },
+      { src: retroescavadeira, alt: "Retroescavadeira da PROJETAJ para locação" },
     ],
   },
   {
