@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
+import { ServicePhotos } from "@/components/ServicePhotos";
 import logo from "@/assets/projetaj-logo.png.asset.json";
 import heroObras from "@/assets/operacao.jpg";
 import pavimentacao from "@/assets/pavimentacao.jpg";
@@ -263,19 +264,7 @@ function IndexPage() {
                 ))}
               </ul>
             </div>
-            <figure className="m-0 grid aspect-[4/3] auto-cols-fr grid-flow-col gap-1 overflow-hidden lg:h-[500px] lg:aspect-auto">
-              {s.images.map((image) => (
-                <img
-                  key={image.src}
-                  src={image.src}
-                  alt={image.alt}
-                  loading="lazy"
-                  width={1200}
-                  height={900}
-                  className="h-full min-h-0 w-full min-w-0 object-cover"
-                />
-              ))}
-            </figure>
+            <ServicePhotos title={s.title} images={s.images} />
           </article>
         ))}
       </section>
