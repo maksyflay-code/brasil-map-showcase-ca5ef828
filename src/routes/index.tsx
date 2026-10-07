@@ -4,7 +4,8 @@ import logo from "@/assets/projetaj-logo.png.asset.json";
 import heroObras from "@/assets/operacao.jpg";
 import pavimentacao from "@/assets/pavimentacao.jpg";
 import caminhao from "@/assets/caminhao.jpg";
-import equipes from "@/assets/equipes-terceirizacao.jpg";
+import equipeInterna from "@/assets/equipe-planejamento-interno.jpeg.asset.json";
+import equipeObra from "@/assets/equipe-planejamento-obra.jpeg.asset.json";
 import escavadeira from "@/assets/escavadeira-projetaj.jpg.asset.json";
 import compactador from "@/assets/compactador-projetaj.png.asset.json";
 import transporte from "@/assets/transporte-projetaj.jpg.asset.json";
@@ -63,7 +64,7 @@ const SERVICES = [
       "Elétrica complexa",
       "Telecom e climatização",
     ],
-    img: pavimentacao,
+    images: [{ src: pavimentacao, alt: "Obras e engenharia" }],
   },
   {
     n: "02",
@@ -78,7 +79,7 @@ const SERVICES = [
       "Caminhões",
       "Carros e utilitários",
     ],
-    img: caminhao,
+    images: [{ src: caminhao, alt: "Locação de equipamentos" }],
   },
   {
     n: "03",
@@ -93,7 +94,10 @@ const SERVICES = [
       "Técnicos especializados",
       "Supervisão",
     ],
-    img: equipes,
+    images: [
+      { src: equipeInterna.url, alt: "Equipe da PROJETAJ conferindo o projeto em ambiente interno" },
+      { src: equipeObra.url, alt: "Equipe da PROJETAJ conferindo o projeto no canteiro de obras" },
+    ],
   },
 ];
 
@@ -252,15 +256,18 @@ function IndexPage() {
                 ))}
               </ul>
             </div>
-            <figure className="m-0 aspect-[4/3] lg:h-[500px] lg:aspect-auto">
-              <img
-                src={s.img}
-                alt={s.title}
-                loading="lazy"
-                width={1200}
-                height={900}
-                className="h-full w-full object-cover"
-              />
+            <figure className="m-0 grid aspect-[4/3] auto-cols-fr grid-flow-col gap-1 overflow-hidden lg:h-[500px] lg:aspect-auto">
+              {s.images.map((image) => (
+                <img
+                  key={image.src}
+                  src={image.src}
+                  alt={image.alt}
+                  loading="lazy"
+                  width={1200}
+                  height={900}
+                  className="h-full min-h-0 w-full min-w-0 object-cover"
+                />
+              ))}
             </figure>
           </article>
         ))}
