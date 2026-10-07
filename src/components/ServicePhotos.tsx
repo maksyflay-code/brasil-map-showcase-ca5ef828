@@ -34,6 +34,16 @@ export function ServicePhotos({ title, images }: ServicePhotosProps) {
         <div className="flex h-full touch-pan-y">
           {images.map((image, index) => (
             <div key={image.src} className="relative h-full min-w-0 flex-[0_0_100%]" aria-hidden={index !== active}>
+              {image.position === "equipment" && (
+                <img
+                  src={image.src}
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
+                  draggable={false}
+                  className="pointer-events-none absolute inset-0 h-full w-full scale-110 select-none object-cover object-center blur-xl"
+                />
+              )}
               <img
                 src={image.src}
                 alt={image.alt}
@@ -41,7 +51,7 @@ export function ServicePhotos({ title, images }: ServicePhotosProps) {
                 width={1200}
                 height={900}
                 draggable={false}
-                className={`absolute inset-0 h-full w-full select-none object-cover ${image.position === "equipment" ? "object-[center_75%]" : "object-center"}`}
+                className={`absolute inset-0 h-full w-full select-none object-center ${image.position === "equipment" ? "object-contain" : "object-cover"}`}
               />
             </div>
           ))}
