@@ -62,11 +62,13 @@ function DesktopItem({
 
 function MobileItem({
   title,
+  prefix,
   to,
   hash,
   children,
 }: {
   title: string;
+  prefix?: string;
   to: string;
   hash?: string;
   children?: React.ReactNode;
@@ -82,8 +84,11 @@ function MobileItem({
       ) : (
         <Check className="h-3 w-3 text-brand-red" strokeWidth={3} />
       )}
-      <p className="font-display text-[0.65rem] font-bold uppercase leading-none tracking-tight text-white underline decoration-brand-red decoration-2 underline-offset-2 group-hover:decoration-white">
-        {title}
+      <p className="font-display text-[0.65rem] font-bold uppercase leading-none tracking-tight text-primary-foreground">
+        {prefix && <span className="block">{prefix}</span>}
+        <span className="underline decoration-brand-red decoration-2 underline-offset-2 group-hover:decoration-primary-foreground">
+          {title}
+        </span>
       </p>
     </Link>
   );
@@ -140,7 +145,7 @@ function MobileRail() {
       </div>
       <div className="flex flex-1 items-stretch overflow-x-auto border-b-4 border-brand-red bg-navy-deep">
         <MobileItem to="/" hash="quem-somos" title="10 Anos" />
-        <MobileItem to="/atuacao" title="12 Estados">
+        <MobileItem to="/atuacao" prefix="12" title="Estados">
           <MiniMap className="h-6 w-auto" />
         </MobileItem>
         <MobileItem to="/crea" title="CREA" />
