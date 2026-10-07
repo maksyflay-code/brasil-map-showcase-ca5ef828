@@ -9,4 +9,4 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 
-- Service images use the shared ServicePhotos component with Embla Carousel for horizontal dragging, manual controls and a fixed-size media area so changing photos never changes section dimensions.
+- Service images use the shared ServicePhotos component with Embla Carousel for horizontal dragging and a fixed-size media area so changing photos never changes section dimensions.

@@ -1,7 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 type ServicePhotosProps = {
   title: string;
@@ -50,32 +48,16 @@ export function ServicePhotos({ title, images }: ServicePhotosProps) {
         </div>
       </div>
       {images.length > 1 && (
-        <div className="absolute bottom-4 right-4 inline-flex select-none items-center gap-4 rounded-full border border-photo-control/10 bg-photo-control/5 px-4 py-2 shadow-photo-control backdrop-blur-xl transition-colors duration-300 hover:bg-photo-control/10 motion-reduce:transition-none">
-          <Button
-            variant="ghost"
-            size="icon"
-            className="h-8 w-8 rounded-full text-photo-control/40 hover:bg-transparent hover:text-photo-control [&_svg]:size-[18px]"
-            aria-label={`Foto anterior — ${title}`}
-            title="Foto anterior"
-            onClick={() => carousel?.scrollPrev()}
-          >
-            <ChevronLeft strokeWidth={1.5} />
-          </Button>
-          <span className="flex min-w-12 items-center justify-center gap-1.5 font-mono text-sm tabular-nums" aria-live="polite" aria-atomic="true">
-            <span className="font-medium text-photo-control">{String(active + 1).padStart(2, "0")}</span>
-            <span className="text-xs font-light text-photo-control/20">/</span>
-            <span className="text-photo-control/40">{String(images.length).padStart(2, "0")}</span>
-          </span>
-          <Button
-            variant="ghost"
-            size="icon"
-            className="h-8 w-8 rounded-full text-photo-control/40 hover:bg-transparent hover:text-photo-control [&_svg]:size-[18px]"
-            aria-label={`Próxima foto — ${title}`}
-            title="Próxima foto"
-            onClick={() => carousel?.scrollNext()}
-          >
-            <ChevronRight strokeWidth={1.5} />
-          </Button>
+        <div className="pointer-events-none absolute inset-x-0 bottom-5 flex justify-center" aria-live="polite" aria-atomic="true">
+          <span className="sr-only">Foto {active + 1} de {images.length}</span>
+          <div className="flex items-center gap-2 rounded-full bg-photo-control/5 px-3 py-2 shadow-photo-control backdrop-blur-sm" aria-hidden="true">
+            {images.map((image, index) => (
+              <span
+                key={image.src}
+                className={`h-1 w-4 rounded-full transition-colors duration-300 motion-reduce:transition-none ${index === active ? "bg-photo-control/90" : "bg-photo-control/30"}`}
+              />
+            ))}
+          </div>
         </div>
       )}
     </figure>
