@@ -41,7 +41,7 @@ export function ServicePhotos({ title, images }: ServicePhotosProps) {
                 width={1200}
                 height={900}
                 draggable={false}
-                className={`absolute inset-0 h-full w-full select-none object-center ${image.position === "equipment" ? "bg-muted object-contain" : "object-cover"}`}
+                className={`absolute inset-0 h-full w-full select-none object-cover ${image.position === "equipment" ? "object-[center_75%]" : "object-center"}`}
               />
             </div>
           ))}
