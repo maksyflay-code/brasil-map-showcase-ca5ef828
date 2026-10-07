@@ -3,7 +3,7 @@ import useEmblaCarousel from "embla-carousel-react";
 
 type ServicePhotosProps = {
   title: string;
-  images: { src: string; alt: string }[];
+  images: { src: string; alt: string; position?: "equipment" }[];
 };
 
 export function ServicePhotos({ title, images }: ServicePhotosProps) {
@@ -41,7 +41,7 @@ export function ServicePhotos({ title, images }: ServicePhotosProps) {
                 width={1200}
                 height={900}
                 draggable={false}
-                className="absolute inset-0 h-full w-full select-none object-cover"
+                className={`absolute inset-0 h-full w-full select-none object-cover ${image.position === "equipment" ? "object-[center_55%] lg:object-[center_70%]" : "object-center"}`}
               />
             </div>
           ))}

@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Service images use the shared ServicePhotos component with Embla Carousel for horizontal dragging and a fixed-size media area so changing photos never changes section dimensions.
+- Individual service photos can specify a responsive focal-position preset in ServicePhotos to frame their subject without changing the shared media dimensions.

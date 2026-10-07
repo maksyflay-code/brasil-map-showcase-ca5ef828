@@ -52,7 +52,7 @@ const PILLARS = [
   { n: "04", t: "Presença em campo" },
 ];
 
-const SERVICES = [
+const SERVICES: { n: string; title: string; lead: string; text: string; items: string[]; images: { src: string; alt: string; position?: "equipment" }[] }[] = [
   {
     n: "01",
     title: "Obras e engenharia",
@@ -86,7 +86,7 @@ const SERVICES = [
     ],
     images: [
       { src: caminhao, alt: "Locação de equipamentos" },
-      { src: retroescavadeira, alt: "Retroescavadeira da PROJETAJ para locação" },
+      { src: retroescavadeira, alt: "Retroescavadeira da PROJETAJ para locação", position: "equipment" },
     ],
   },
   {
