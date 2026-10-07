@@ -355,18 +355,20 @@ function IndexPage() {
 
       <section
         id="credenciais"
-        className="border-b border-border px-6 py-20 md:px-12"
+        aria-labelledby="credenciais-title"
+        className="border-b border-border bg-bone px-6 py-12 md:px-12 md:py-20"
       >
-        <p className="label-caps text-brand-red">Credenciais</p>
-        <h2 className="mt-5 max-w-3xl text-3xl leading-tight text-navy md:text-5xl">
-          O que sustenta cada contrato.
-        </h2>
-        <div className="mt-12 grid gap-px md:grid-cols-3">
+        <div className="border-l-2 border-brand-red pl-5 md:pl-8">
+          <p className="label-caps text-brand-red">Credenciais</p>
+          <h2 id="credenciais-title" className="mt-3 max-w-3xl text-3xl leading-tight text-navy md:text-5xl">
+            O que sustenta cada contrato.
+          </h2>
+          <div className="mt-6 grid border-t border-navy/15 md:mt-8 md:grid-cols-3">
           {CREDENTIALS.map((c) => (
             <Link
               key={c.id}
               to={`/${c.id}` as "/crea" | "/regularidade" | "/lgpd"}
-              className="group scroll-mt-24 border-t-2 border-brand-red pt-5 md:pr-8"
+              className="group scroll-mt-24 border-b border-navy/15 py-6 last:border-b-0 md:border-b-0 md:border-r md:px-6 md:first:pl-0 md:last:border-r-0 md:last:pr-0"
             >
               <span className="label-caps text-brand-red">{c.label}</span>
               <p className="mt-3 font-display text-2xl text-navy underline decoration-brand-red/0 decoration-2 underline-offset-4 transition-colors group-hover:decoration-brand-red">
@@ -381,6 +383,7 @@ function IndexPage() {
               </span>
             </Link>
           ))}
+          </div>
         </div>
       </section>
 
