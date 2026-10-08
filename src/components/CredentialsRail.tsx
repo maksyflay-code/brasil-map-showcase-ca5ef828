@@ -81,12 +81,12 @@ function MobileItem({
       onClick={() => {
         if (hash) document.getElementById(hash)?.scrollIntoView();
       }}
-      className="group flex flex-1 flex-col items-center justify-center gap-1 px-2 py-2 text-center transition-colors hover:bg-white/5"
+      className="group flex flex-1 flex-col items-center justify-center gap-0.5 px-2 text-center transition-colors hover:bg-white/5"
     >
-      <Check className="h-3 w-3 text-brand-red" strokeWidth={3} />
+      <Check className="h-2 w-2 shrink-0 text-brand-red" strokeWidth={3} />
       <p className="font-display text-[0.65rem] font-bold uppercase leading-none tracking-tight text-primary-foreground">
         {prefix && <span className="block">{prefix}</span>}
-        <span className="underline decoration-brand-red decoration-2 underline-offset-2">
+        <span className="inline-block border-b-2 border-brand-red pb-0.5">
           {title}
         </span>
       </p>
