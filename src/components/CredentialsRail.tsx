@@ -46,6 +46,9 @@ function DesktopItem({
     <Link
       to={to}
       {...(hash ? { hash } : {})}
+      onClick={() => {
+        if (hash) document.getElementById(hash)?.scrollIntoView();
+      }}
       className="group flex flex-1 flex-col items-center justify-center border-b border-white/10 px-3 py-3 text-center transition-colors last:border-b-0 hover:bg-white/5"
     >
       <Check className="mb-1 h-3 w-3 text-brand-red" strokeWidth={3} />
@@ -75,6 +78,9 @@ function MobileItem({
     <Link
       to={to}
       {...(hash ? { hash } : {})}
+      onClick={() => {
+        if (hash) document.getElementById(hash)?.scrollIntoView();
+      }}
       className="group flex flex-1 flex-col items-center justify-center gap-1 px-2 py-2 text-center transition-colors hover:bg-white/5"
     >
       <Check className="h-3 w-3 text-brand-red" strokeWidth={3} />
