@@ -56,7 +56,7 @@ function Lgpd() {
         <h1 className="mt-4 max-w-3xl text-4xl leading-tight text-navy md:text-6xl">
           Canal de <span className="text-brand-red">privacidade</span>.
         </h1>
-        <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">
+        <p className="mt-5 max-w-2xl text-justify text-base leading-relaxed text-muted-foreground">
           Tratamos dados pessoais conforme a Lei 13.709/2018. Solicitações de
           acesso, correção ou exclusão pelo e-mail{" "}
           <a
@@ -73,11 +73,11 @@ function Lgpd() {
         {POINTS.map((p) => (
           <article
             key={p.t}
-            className="border-b border-border px-6 py-12 md:border-r md:px-16 md:[&:nth-child(2n)]:border-r-0"
+            className="min-w-0 border-b border-border px-6 py-8 md:border-r md:px-10 md:py-10 md:[&:nth-child(2n)]:border-r-0"
           >
             <Check className="h-5 w-5 text-brand-red" strokeWidth={3} />
             <h2 className="mt-5 font-display text-2xl text-navy">{p.t}</h2>
-            <p className="mt-3 max-w-lg text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-3 text-justify text-sm leading-relaxed text-muted-foreground">
               {p.d}
             </p>
           </article>

@@ -3,3 +3,5 @@
 - [x] Direcionar o selo de 10 anos para a apresentação da empresa.
 - [x] Destacar o período 2016–2026 em vermelho.
 - [x] Conferir os ajustes na página.
+- [x] Alinhar os parágrafos e compactar os espaços das páginas dos selos.
+- [x] Conferir os textos no computador e celular.

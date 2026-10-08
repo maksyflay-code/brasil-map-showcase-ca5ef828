@@ -56,7 +56,7 @@ function Regularidade() {
         <h1 className="mt-4 max-w-3xl text-4xl leading-tight text-navy md:text-6xl">
           Certidões <span className="text-brand-red">verificáveis</span>.
         </h1>
-        <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">
+        <p className="mt-5 max-w-2xl text-justify text-base leading-relaxed text-muted-foreground">
           Mantemos regularidade fiscal, trabalhista e previdenciária (federal,
           estadual, municipal, FGTS e CNDT). As certidões são enviadas em cada
           contratação e podem ser conferidas nos portais oficiais a qualquer
@@ -68,11 +68,11 @@ function Regularidade() {
         {CERTIFICATES.map((c) => (
           <article
             key={c.t}
-            className="border-b border-border px-6 py-12 md:border-r md:px-16 md:[&:nth-child(2n)]:border-r-0"
+            className="min-w-0 border-b border-border px-6 py-8 md:border-r md:px-10 md:py-10 md:[&:nth-child(2n)]:border-r-0"
           >
             <Check className="h-5 w-5 text-brand-red" strokeWidth={3} />
             <h2 className="mt-5 font-display text-2xl text-navy">{c.t}</h2>
-            <p className="mt-3 max-w-lg text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-3 text-justify text-sm leading-relaxed text-muted-foreground">
               {c.d}
             </p>
           </article>
