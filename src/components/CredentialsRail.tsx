@@ -86,7 +86,7 @@ function MobileItem({
       <Check className="h-3 w-3 text-brand-red" strokeWidth={3} />
       <p className="font-display text-[0.65rem] font-bold uppercase leading-none tracking-tight text-primary-foreground">
         {prefix && <span className="block">{prefix}</span>}
-        <span className="underline decoration-brand-red decoration-2 underline-offset-2 group-hover:decoration-primary-foreground">
+        <span className="underline decoration-brand-red decoration-2 underline-offset-2">
           {title}
         </span>
       </p>
