@@ -4,4 +4,4 @@
 - [x] Destacar o período 2016–2026 em vermelho.
 - [x] Conferir os ajustes na página.
 - [x] Alinhar os parágrafos e compactar os espaços das páginas dos selos.
-- [ ] Conferir os textos no computador e celular.
+- [x] Conferir os textos no computador e celular.
