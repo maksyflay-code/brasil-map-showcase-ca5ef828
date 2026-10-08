@@ -2,4 +2,4 @@
 - [x] Atualizar o CEP para 44820-003.
 - [x] Direcionar o selo de 10 anos para a apresentação da empresa.
 - [x] Destacar o período 2016–2026 em vermelho.
-- [ ] Conferir os ajustes na página.
+- [x] Conferir os ajustes na página.
