@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Service images use the shared ServicePhotos component with Embla Carousel for horizontal dragging and a fixed-size media area so changing photos never changes section dimensions.
+- Contact address values live in a shared data module with a focused regression test so the displayed address remains consistent.

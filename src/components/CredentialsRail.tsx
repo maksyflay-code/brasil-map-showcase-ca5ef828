@@ -65,13 +65,11 @@ function MobileItem({
   prefix,
   to,
   hash,
-  children,
 }: {
   title: string;
   prefix?: string;
   to: string;
   hash?: string;
-  children?: React.ReactNode;
 }) {
   return (
     <Link
@@ -79,11 +77,7 @@ function MobileItem({
       {...(hash ? { hash } : {})}
       className="group flex flex-1 flex-col items-center justify-center gap-1 px-2 py-2 text-center transition-colors hover:bg-white/5"
     >
-      {children ? (
-        children
-      ) : (
-        <Check className="h-3 w-3 text-brand-red" strokeWidth={3} />
-      )}
+      <Check className="h-3 w-3 text-brand-red" strokeWidth={3} />
       <p className="font-display text-[0.65rem] font-bold uppercase leading-none tracking-tight text-primary-foreground">
         {prefix && <span className="block">{prefix}</span>}
         <span className="underline decoration-brand-red decoration-2 underline-offset-2 group-hover:decoration-primary-foreground">
@@ -145,9 +139,7 @@ function MobileRail() {
       </div>
       <div className="flex flex-1 items-stretch overflow-x-auto border-b-4 border-brand-red bg-navy-deep">
         <MobileItem to="/" hash="quem-somos" title="10 Anos" />
-        <MobileItem to="/atuacao" prefix="12" title="Estados">
-          <MiniMap className="h-6 w-auto" />
-        </MobileItem>
+        <MobileItem to="/atuacao" prefix="12" title="Estados" />
         <MobileItem to="/crea" title="CREA" />
         <MobileItem to="/regularidade" title="Regularidade" />
         <MobileItem to="/lgpd" title="LGPD" />
