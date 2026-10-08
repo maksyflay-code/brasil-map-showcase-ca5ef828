@@ -200,7 +200,7 @@ function IndexPage() {
         />
         <div className="absolute inset-0 bg-navy-deep/80" />
         <div className="absolute inset-0 flex flex-col justify-end px-6 pb-12 md:px-12 md:pb-16">
-          <p className="label-caps text-primary-foreground/70">Quem somos / <span className="text-brand-red">2016—2026</span></p>
+          <p className="label-caps text-primary-foreground/70">Quem somos / <span className="font-bold text-brand-red">2016—2026</span></p>
           <h1 className="mt-4 max-w-4xl text-4xl leading-[1.05] text-primary-foreground md:text-7xl">
             Planejamos.
             <br />
