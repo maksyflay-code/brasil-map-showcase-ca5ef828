@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { ServicePhotos } from "@/components/ServicePhotos";
+import { CONTACT_POSTAL_CODE } from "@/data/contact";
 import logo from "@/assets/projetaj-logo.png.asset.json";
 import heroObras from "@/assets/operacao.jpg";
 import pavimentacao from "@/assets/pavimentacao.jpg";
@@ -189,7 +190,7 @@ function IndexPage() {
         </nav>
       </header>
 
-      <section className="relative border-b border-border">
+      <section id="quem-somos" className="relative scroll-mt-[136px] border-b border-border lg:scroll-mt-20">
         <img
           src={heroObras}
           alt="Equipe da PROJETAJ em operação de terraplenagem"
@@ -199,7 +200,7 @@ function IndexPage() {
         />
         <div className="absolute inset-0 bg-navy-deep/80" />
         <div className="absolute inset-0 flex flex-col justify-end px-6 pb-12 md:px-12 md:pb-16">
-          <p className="label-caps text-white/70">Quem somos / 2016—2026</p>
+          <p className="label-caps text-primary-foreground/70">Quem somos / <span className="text-brand-red">2016—2026</span></p>
           <h1 className="mt-4 max-w-4xl text-4xl leading-[1.05] text-primary-foreground md:text-7xl">
             Planejamos.
             <br />
@@ -214,7 +215,7 @@ function IndexPage() {
         </div>
       </section>
 
-      <section id="quem-somos" className="border-b border-border">
+      <section className="border-b border-border">
         <div className="grid md:grid-cols-4">
           {PILLARS.map((p) => (
             <div
@@ -426,7 +427,7 @@ function IndexPage() {
             <dd className="mt-2 text-navy">
               Av. ACM, 471, 2º andar — Centro
               <br />
-              Capim Grosso/BA — CEP 44.695-000
+              Capim Grosso/BA — CEP {CONTACT_POSTAL_CODE}
             </dd>
           </div>
         </dl>

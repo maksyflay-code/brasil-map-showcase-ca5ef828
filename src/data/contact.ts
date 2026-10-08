@@ -1,0 +1,1 @@
+export const CONTACT_POSTAL_CODE = "44820-003";
