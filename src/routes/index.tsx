@@ -171,7 +171,7 @@ function IndexPage() {
     <div className="bg-background">
       <header className="sticky top-0 z-30 flex items-center justify-between gap-6 border-b border-border bg-background/95 px-6 py-4 backdrop-blur md:px-12">
         <img
-          src={logo.url}
+          src={logo}
           alt="PROJETAJ Empreendimentos — 10 anos"
           className="h-10 w-auto"
         />
