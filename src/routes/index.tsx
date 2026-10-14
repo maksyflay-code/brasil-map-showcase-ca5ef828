@@ -7,13 +7,13 @@ import logo from "@/assets/projetaj-logo.webp";
 import heroObras from "@/assets/operacao.jpg";
 import pavimentacao from "@/assets/pavimentacao.jpg";
 import caminhao from "@/assets/caminhao.jpg";
-import escavadeiraServico from "@/assets/escavadeira-horizontal-servico.png.asset.json";
-import equipeInterna from "@/assets/equipe-planejamento-interno.jpeg.asset.json";
-import equipeObra from "@/assets/equipe-planejamento-obra.jpeg.asset.json";
-import escavadeira from "@/assets/escavadeira-projetaj.jpg.asset.json";
-import compactador from "@/assets/compactador-projetaj.png.asset.json";
-import transporte from "@/assets/transporte-projetaj.jpg.asset.json";
-import frotaAutomoveis from "@/assets/frota-automoveis.jpg.asset.json";
+import escavadeiraServico from "@/assets/escavadeira-h.png";
+import equipeInterna from "@/assets/equipe-interno.jpeg";
+import equipeObra from "@/assets/equipe-obra.jpeg";
+import escavadeira from "@/assets/escavadeira.jpg";
+import compactador from "@/assets/compactador2.png";
+import transporte from "@/assets/transporte.jpg";
+import frotaAutomoveis from "@/assets/frota.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
