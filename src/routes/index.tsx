@@ -185,7 +185,7 @@ function IndexPage() {
               {n.label}
             </a>
           ))}
-          <Link to="/atuacao" className="label-caps text-brand-red">
+          <Link to="/atuacao/" className="label-caps text-brand-red">
             Atuação nacional
           </Link>
         </nav>
