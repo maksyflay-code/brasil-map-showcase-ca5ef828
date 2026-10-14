@@ -2,7 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { ServicePhotos } from "@/components/ServicePhotos";
 import { CONTACT_POSTAL_CODE } from "@/data/contact";
-import logo from "@/assets/projetaj-logo.png.asset.json";
+import logo from "@/assets/projetaj-logo.webp";
+
 import heroObras from "@/assets/operacao.jpg";
 import pavimentacao from "@/assets/pavimentacao.jpg";
 import caminhao from "@/assets/caminhao.jpg";
