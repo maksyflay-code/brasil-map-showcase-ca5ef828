@@ -88,7 +88,7 @@ const SERVICES = [
     ],
     images: [
       { src: caminhao, alt: "Locação de equipamentos" },
-      { src: escavadeiraServico.url, alt: "Escavadeira da PROJETAJ em campo para locação" },
+      { src: escavadeiraServico, alt: "Escavadeira da PROJETAJ em campo para locação" },
     ],
   },
   {
@@ -105,8 +105,8 @@ const SERVICES = [
       "Supervisão",
     ],
     images: [
-      { src: equipeInterna.url, alt: "Equipe da PROJETAJ conferindo o projeto em ambiente interno" },
-      { src: equipeObra.url, alt: "Equipe da PROJETAJ conferindo o projeto no canteiro de obras" },
+      { src: equipeInterna, alt: "Equipe da PROJETAJ conferindo o projeto em ambiente interno" },
+      { src: equipeObra, alt: "Equipe da PROJETAJ conferindo o projeto no canteiro de obras" },
     ],
   },
 ];
@@ -145,22 +145,22 @@ function Index() {
 
 const LOCACOES = [
   {
-    src: escavadeira.url,
+    src: escavadeira,
     title: "Escavadeira em operação",
     tag: "Linha amarela",
   },
   {
-    src: compactador.url,
+    src: compactador,
     title: "Compactador de resíduos",
     tag: "Equipamentos especiais",
   },
   {
-    src: transporte.url,
+    src: transporte,
     title: "Logística de máquinas pesadas",
     tag: "Logística própria",
   },
   {
-    src: frotaAutomoveis.url,
+    src: frotaAutomoveis,
     title: "Locação de automóveis",
     tag: "Frota de veículos",
   },
