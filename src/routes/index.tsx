@@ -369,7 +369,7 @@ function IndexPage() {
           {CREDENTIALS.map((c) => (
             <Link
               key={c.id}
-              to={`/${c.id}` as "/crea" | "/regularidade" | "/lgpd"}
+              to={`/${c.id}/` as "/crea/" | "/regularidade/" | "/lgpd/"}
               className="group scroll-mt-24 py-6 md:px-6 md:first:pl-0 md:last:pr-0"
             >
               <span className="label-caps text-brand-red">{c.label}</span>
