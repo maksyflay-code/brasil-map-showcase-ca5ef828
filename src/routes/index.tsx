@@ -2,17 +2,18 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { ServicePhotos } from "@/components/ServicePhotos";
 import { CONTACT_POSTAL_CODE } from "@/data/contact";
-import logo from "@/assets/projetaj-logo.png.asset.json";
+import logo from "@/assets/projetaj-logo.webp";
+
 import heroObras from "@/assets/operacao.jpg";
 import pavimentacao from "@/assets/pavimentacao.jpg";
 import caminhao from "@/assets/caminhao.jpg";
-import escavadeiraServico from "@/assets/escavadeira-horizontal-servico.png.asset.json";
-import equipeInterna from "@/assets/equipe-planejamento-interno.jpeg.asset.json";
-import equipeObra from "@/assets/equipe-planejamento-obra.jpeg.asset.json";
-import escavadeira from "@/assets/escavadeira-projetaj.jpg.asset.json";
-import compactador from "@/assets/compactador-projetaj.png.asset.json";
-import transporte from "@/assets/transporte-projetaj.jpg.asset.json";
-import frotaAutomoveis from "@/assets/frota-automoveis.jpg.asset.json";
+import escavadeiraServico from "@/assets/escavadeira-h.png";
+import equipeInterna from "@/assets/equipe-interno.jpeg";
+import equipeObra from "@/assets/equipe-obra.jpeg";
+import escavadeira from "@/assets/escavadeira.jpg";
+import compactador from "@/assets/compactador2.png";
+import transporte from "@/assets/transporte.jpg";
+import frotaAutomoveis from "@/assets/frota.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -87,7 +88,7 @@ const SERVICES = [
     ],
     images: [
       { src: caminhao, alt: "Locação de equipamentos" },
-      { src: escavadeiraServico.url, alt: "Escavadeira da PROJETAJ em campo para locação" },
+      { src: escavadeiraServico, alt: "Escavadeira da PROJETAJ em campo para locação" },
     ],
   },
   {
@@ -104,8 +105,8 @@ const SERVICES = [
       "Supervisão",
     ],
     images: [
-      { src: equipeInterna.url, alt: "Equipe da PROJETAJ conferindo o projeto em ambiente interno" },
-      { src: equipeObra.url, alt: "Equipe da PROJETAJ conferindo o projeto no canteiro de obras" },
+      { src: equipeInterna, alt: "Equipe da PROJETAJ conferindo o projeto em ambiente interno" },
+      { src: equipeObra, alt: "Equipe da PROJETAJ conferindo o projeto no canteiro de obras" },
     ],
   },
 ];
@@ -144,22 +145,22 @@ function Index() {
 
 const LOCACOES = [
   {
-    src: escavadeira.url,
+    src: escavadeira,
     title: "Escavadeira em operação",
     tag: "Linha amarela",
   },
   {
-    src: compactador.url,
+    src: compactador,
     title: "Compactador de resíduos",
     tag: "Equipamentos especiais",
   },
   {
-    src: transporte.url,
+    src: transporte,
     title: "Logística de máquinas pesadas",
     tag: "Logística própria",
   },
   {
-    src: frotaAutomoveis.url,
+    src: frotaAutomoveis,
     title: "Locação de automóveis",
     tag: "Frota de veículos",
   },
@@ -170,7 +171,7 @@ function IndexPage() {
     <div className="bg-background">
       <header className="sticky top-0 z-30 flex items-center justify-between gap-6 border-b border-border bg-background/95 px-6 py-4 backdrop-blur md:px-12">
         <img
-          src={logo.url}
+          src={logo}
           alt="PROJETAJ Empreendimentos — 10 anos"
           className="h-10 w-auto"
         />
@@ -184,7 +185,7 @@ function IndexPage() {
               {n.label}
             </a>
           ))}
-          <Link to="/atuacao" className="label-caps text-brand-red">
+          <Link to="/atuacao/" className="label-caps text-brand-red">
             Atuação nacional
           </Link>
         </nav>
@@ -299,7 +300,7 @@ function IndexPage() {
             completo da nossa atuação.
           </p>
           <Link
-            to="/atuacao"
+            to="/atuacao/"
             className="label-caps mt-8 inline-flex items-center gap-3 border-2 border-navy px-6 py-4 text-navy transition-colors hover:bg-navy hover:text-primary-foreground"
           >
             Ver mapa nacional
@@ -368,7 +369,7 @@ function IndexPage() {
           {CREDENTIALS.map((c) => (
             <Link
               key={c.id}
-              to={`/${c.id}` as "/crea" | "/regularidade" | "/lgpd"}
+              to={`/${c.id}/` as "/crea/" | "/regularidade/" | "/lgpd/"}
               className="group scroll-mt-24 py-6 md:px-6 md:first:pl-0 md:last:pr-0"
             >
               <span className="label-caps text-brand-red">{c.label}</span>

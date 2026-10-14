@@ -111,22 +111,23 @@ function DesktopRail() {
           sub="Trajetória contínua"
         />
 
-        <DesktopItem to="/atuacao" title="12 Estados" sub="Ver mapa nacional">
+        <DesktopItem to="/atuacao/" title="12 Estados" sub="Ver mapa nacional">
+
           <MiniMap />
         </DesktopItem>
 
         <DesktopItem
-          to="/crea"
+          to="/crea/"
           title="CREA"
           sub="Empresa registrada"
         />
         <DesktopItem
-          to="/regularidade"
+          to="/regularidade/"
           title="Regularidade"
           sub="Certidões verificáveis"
         />
         <DesktopItem
-          to="/lgpd"
+          to="/lgpd/"
           title="LGPD"
           sub="Canal de privacidade"
         />
@@ -145,10 +146,10 @@ function MobileRail() {
       </div>
       <div className="flex flex-1 items-stretch overflow-x-auto border-b-4 border-brand-red bg-navy-deep">
         <MobileItem to="/" hash="quem-somos" title="10 Anos" />
-        <MobileItem to="/atuacao" prefix="12" title="Estados" />
-        <MobileItem to="/crea" title="CREA" />
-        <MobileItem to="/regularidade" title="Regularidade" />
-        <MobileItem to="/lgpd" title="LGPD" />
+        <MobileItem to="/atuacao/" prefix="12" title="Estados" />
+        <MobileItem to="/crea/" title="CREA" />
+        <MobileItem to="/regularidade/" title="Regularidade" />
+        <MobileItem to="/lgpd/" title="LGPD" />
       </div>
     </nav>
   );
