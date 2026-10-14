@@ -111,7 +111,8 @@ function DesktopRail() {
           sub="Trajetória contínua"
         />
 
-        <DesktopItem to="/atuacao" title="12 Estados" sub="Ver mapa nacional">
+        <DesktopItem to="/atuacao/" title="12 Estados" sub="Ver mapa nacional">
+
           <MiniMap />
         </DesktopItem>
 
