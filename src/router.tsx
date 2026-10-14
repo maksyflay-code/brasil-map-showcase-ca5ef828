@@ -10,6 +10,10 @@ export const getRouter = () => {
     context: { queryClient },
     scrollRestoration: true,
     defaultPreloadStaleTime: 0,
+    // Canonical URLs keep a trailing slash. This also lets the build-time
+    // prerender pass render /atuacao/ etc. directly (it requests the
+    // trailing-slash URL and cannot follow redirects).
+    trailingSlash: "always",
   });
 
   return router;
