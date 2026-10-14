@@ -300,7 +300,7 @@ function IndexPage() {
             completo da nossa atuação.
           </p>
           <Link
-            to="/atuacao"
+            to="/atuacao/"
             className="label-caps mt-8 inline-flex items-center gap-3 border-2 border-navy px-6 py-4 text-navy transition-colors hover:bg-navy hover:text-primary-foreground"
           >
             Ver mapa nacional
