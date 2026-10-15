@@ -31,7 +31,7 @@ export function ServicePhotos({ title, images }: ServicePhotosProps) {
 
   return (
     <figure
-      className="relative m-0 aspect-[4/3] overflow-hidden lg:h-[500px] lg:aspect-auto"
+      className="group relative m-0 aspect-[4/3] overflow-hidden lg:h-[500px] lg:aspect-auto"
       aria-label={`Fotos — ${title}`}
     >
       <div ref={carouselRef} className="h-full overflow-hidden cursor-grab active:cursor-grabbing">
