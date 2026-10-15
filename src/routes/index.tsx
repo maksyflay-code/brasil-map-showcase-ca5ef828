@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { ServicePhotos } from "@/components/ServicePhotos";
+import { SiteFooter } from "@/components/SiteFooter";
 import { CONTACT_POSTAL_CODE } from "@/data/contact";
 import logo from "@/assets/projetaj-logo.webp";
 
@@ -449,21 +450,7 @@ function IndexPage() {
         </dl>
       </section>
 
-      <footer className="border-t border-border bg-navy-deep px-6 py-12 md:px-12">
-        <p className="label-caps text-white/60">
-          © 2026 PROJETAJ Empreendimentos — CNPJ 25.204.592/0001-94
-        </p>
-        <p className="mt-4 max-w-xl text-sm leading-relaxed text-white/60">
-          Privacidade e LGPD — solicitações de acesso, correção ou exclusão de
-          dados pessoais:{" "}
-          <a
-            className="text-brand-red underline underline-offset-4"
-            href="mailto:privacidade@projetaj.com.br"
-          >
-            privacidade@projetaj.com.br
-          </a>
-        </p>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }

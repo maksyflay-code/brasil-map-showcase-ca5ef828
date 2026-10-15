@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { SiteFooter } from "@/components/SiteFooter";
 import { ArrowLeft, Check } from "lucide-react";
 
 export const Route = createFileRoute("/regularidade")({
@@ -103,11 +104,7 @@ function Regularidade() {
         </p>
       </section>
 
-      <footer className="border-t border-border bg-navy-deep px-6 py-12 md:px-16">
-        <p className="label-caps text-white/60">
-          © 2026 PROJETAJ Empreendimentos — CNPJ 25.204.592/0001-94
-        </p>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
