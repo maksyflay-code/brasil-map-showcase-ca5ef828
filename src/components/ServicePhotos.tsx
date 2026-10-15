@@ -74,11 +74,18 @@ export function ServicePhotos({ title, images }: ServicePhotosProps) {
       {images.length > 1 && (
         <div className="pointer-events-none absolute inset-x-0 bottom-5 flex justify-center" aria-live="polite" aria-atomic="true">
           <span className="sr-only">Foto {active + 1} de {images.length}</span>
-          <div className="flex items-center gap-2 rounded-full bg-photo-control/5 px-3 py-2 shadow-photo-control backdrop-blur-sm" aria-hidden="true">
+          <div
+            className="flex items-center gap-2 rounded-full bg-navy-deep/85 px-4 py-2.5 shadow-photo-control ring-1 ring-primary-foreground/25 backdrop-blur-sm"
+            aria-hidden="true"
+          >
             {images.map((image, index) => (
               <span
                 key={image.src}
-                className={`h-1 w-4 rounded-full transition-colors duration-300 motion-reduce:transition-none ${index === active ? "bg-photo-control/90" : "bg-photo-control/30"}`}
+                className={`h-1.5 rounded-full transition-all duration-300 motion-reduce:transition-none ${
+                  index === active
+                    ? "w-7 bg-brand-red ring-2 ring-brand-red/35"
+                    : "w-3 bg-primary-foreground/55"
+                }`}
               />
             ))}
           </div>
