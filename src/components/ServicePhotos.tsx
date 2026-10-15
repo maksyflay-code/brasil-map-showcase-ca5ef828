@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 
 type ServicePhotosProps = {
@@ -9,6 +10,9 @@ type ServicePhotosProps = {
 export function ServicePhotos({ title, images }: ServicePhotosProps) {
   const [active, setActive] = useState(0);
   const [carouselRef, carousel] = useEmblaCarousel({ loop: true });
+
+  const scrollPrev = useCallback(() => carousel?.scrollPrev(), [carousel]);
+  const scrollNext = useCallback(() => carousel?.scrollNext(), [carousel]);
 
   const updateActive = useCallback(() => {
     if (carousel) setActive(carousel.selectedScrollSnap());
@@ -27,7 +31,7 @@ export function ServicePhotos({ title, images }: ServicePhotosProps) {
 
   return (
     <figure
-      className="relative m-0 aspect-[4/3] overflow-hidden lg:h-[500px] lg:aspect-auto"
+      className="group relative m-0 aspect-[4/3] overflow-hidden lg:h-[500px] lg:aspect-auto"
       aria-label={`Fotos — ${title}`}
     >
       <div ref={carouselRef} className="h-full overflow-hidden cursor-grab active:cursor-grabbing">
@@ -47,6 +51,26 @@ export function ServicePhotos({ title, images }: ServicePhotosProps) {
           ))}
         </div>
       </div>
+      {images.length > 1 && (
+        <>
+          <button
+            type="button"
+            onClick={scrollPrev}
+            aria-label="Ver foto anterior"
+            className="absolute left-3 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-photo-control/10 text-primary-foreground opacity-70 shadow-photo-control backdrop-blur-sm transition-opacity duration-200 hover:bg-photo-control/30 hover:opacity-100 focus-visible:opacity-100 md:opacity-0 md:group-hover:opacity-70 md:group-hover:hover:opacity-100"
+          >
+            <ChevronLeft className="h-4 w-4" strokeWidth={2.5} />
+          </button>
+          <button
+            type="button"
+            onClick={scrollNext}
+            aria-label="Ver próxima foto"
+            className="absolute right-3 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-photo-control/10 text-primary-foreground opacity-70 shadow-photo-control backdrop-blur-sm transition-opacity duration-200 hover:bg-photo-control/30 hover:opacity-100 focus-visible:opacity-100 md:opacity-0 md:group-hover:opacity-70 md:group-hover:hover:opacity-100"
+          >
+            <ChevronRight className="h-4 w-4" strokeWidth={2.5} />
+          </button>
+        </>
+      )}
       {images.length > 1 && (
         <div className="pointer-events-none absolute inset-x-0 bottom-5 flex justify-center" aria-live="polite" aria-atomic="true">
           <span className="sr-only">Foto {active + 1} de {images.length}</span>
