@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { ServicePhotos } from "@/components/ServicePhotos";
+import { SiteFooter } from "@/components/SiteFooter";
 import { CONTACT_POSTAL_CODE } from "@/data/contact";
 import logo from "@/assets/projetaj-logo.webp";
 

@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { SiteFooter } from "@/components/SiteFooter";
 import { useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import { BRAZIL_STATES, MAP_HEIGHT, MAP_WIDTH } from "@/data/brazil-map";
@@ -130,11 +131,7 @@ function Atuacao() {
         </div>
       </div>
 
-      <footer className="border-t border-border px-6 py-12 md:px-16">
-        <p className="label-caps text-muted-foreground">
-          © 2026 PROJETAJ Empreendimentos — CNPJ 25.204.592/0001-94
-        </p>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
