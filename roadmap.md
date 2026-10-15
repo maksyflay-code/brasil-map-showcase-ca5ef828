@@ -5,3 +5,4 @@
 - [x] Conferir os ajustes na página.
 - [x] Alinhar os parágrafos e compactar os espaços das páginas dos selos.
 - [x] Conferir os textos no computador e celular.
+- [ ] Corrigir e conferir o posicionamento do menu Capacidades no título da seção.

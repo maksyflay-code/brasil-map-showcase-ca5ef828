@@ -230,14 +230,14 @@ function IndexPage() {
         </div>
       </section>
 
-      <section className="border-b border-border px-6 py-20 md:px-12">
+      <section id="capacidades" className="scroll-mt-[136px] border-b border-border px-6 py-20 md:px-12 lg:scroll-mt-20">
         <div className="rule-red w-16" />
         <h2 className="mt-8 max-w-4xl text-3xl leading-tight text-navy md:text-5xl">
           Uma empresa. Três capacidades: executar, disponibilizar e mobilizar.
         </h2>
       </section>
 
-      <section id="capacidades">
+      <section>
         {SERVICES.map((s, i) => (
           <article
             key={s.n}
@@ -271,7 +271,7 @@ function IndexPage() {
         ))}
       </section>
 
-      <section id="metodo" className="bg-navy-deep px-6 py-20 md:px-12">
+      <section id="metodo" className="scroll-mt-[136px] bg-navy-deep px-6 py-20 md:px-12 lg:scroll-mt-20">
         <p className="label-caps text-white/60">Como entregamos</p>
         <h2 className="mt-5 max-w-3xl text-3xl leading-tight text-primary-foreground md:text-5xl">
           Uma operação conectada de ponta a ponta.
@@ -389,7 +389,7 @@ function IndexPage() {
         </div>
       </section>
 
-      <section id="contato" className="px-6 py-20 md:px-12">
+      <section id="contato" className="scroll-mt-[136px] px-6 py-20 md:px-12 lg:scroll-mt-20">
         <p className="label-caps text-brand-red">Próximo contrato</p>
         <h2 className="mt-5 max-w-3xl text-3xl leading-tight text-navy md:text-5xl">
           Qual capacidade sua operação precisa agora?
