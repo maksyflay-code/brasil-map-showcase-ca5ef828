@@ -52,6 +52,26 @@ export function ServicePhotos({ title, images }: ServicePhotosProps) {
         </div>
       </div>
       {images.length > 1 && (
+        <>
+          <button
+            type="button"
+            onClick={scrollPrev}
+            aria-label="Ver foto anterior"
+            className="absolute left-3 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-photo-control/10 text-primary-foreground opacity-70 shadow-photo-control backdrop-blur-sm transition-opacity duration-200 hover:bg-photo-control/30 hover:opacity-100 focus-visible:opacity-100 md:opacity-0 md:group-hover:opacity-70 md:group-hover:hover:opacity-100"
+          >
+            <ChevronLeft className="h-4 w-4" strokeWidth={2.5} />
+          </button>
+          <button
+            type="button"
+            onClick={scrollNext}
+            aria-label="Ver próxima foto"
+            className="absolute right-3 top-1/2 z-10 flex h-9 w-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-photo-control/10 text-primary-foreground opacity-70 shadow-photo-control backdrop-blur-sm transition-opacity duration-200 hover:bg-photo-control/30 hover:opacity-100 focus-visible:opacity-100 md:opacity-0 md:group-hover:opacity-70 md:group-hover:hover:opacity-100"
+          >
+            <ChevronRight className="h-4 w-4" strokeWidth={2.5} />
+          </button>
+        </>
+      )}
+      {images.length > 1 && (
         <div className="pointer-events-none absolute inset-x-0 bottom-5 flex justify-center" aria-live="polite" aria-atomic="true">
           <span className="sr-only">Foto {active + 1} de {images.length}</span>
           <div className="flex items-center gap-2 rounded-full bg-photo-control/5 px-3 py-2 shadow-photo-control backdrop-blur-sm" aria-hidden="true">
