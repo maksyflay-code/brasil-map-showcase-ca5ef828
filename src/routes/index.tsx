@@ -400,7 +400,7 @@ function IndexPage() {
           construir a solução adequada.
         </p>
 
-        <dl className="mt-12 grid gap-8 border-t border-border pt-10 md:grid-cols-2 lg:grid-cols-4">
+        <dl className="mt-12 grid gap-8 border-t border-border pt-10 md:grid-cols-3">
           <div>
             <dt className="label-caps text-muted-foreground">
               Telefone e WhatsApp
@@ -421,21 +421,6 @@ function IndexPage() {
             <dd className="mt-2 text-navy">
               <a href="mailto:contato@projetaj.com.br">
                 contato@projetaj.com.br
-              </a>
-            </dd>
-          </div>
-          <div>
-            <dt className="label-caps text-muted-foreground">
-              Trabalhe conosco
-            </dt>
-            <dd className="mt-2 text-navy">
-              Envie seu currículo
-              <br />
-              <a
-                href="mailto:rh@projetaj.com.br"
-                className="underline decoration-brand-red decoration-2 underline-offset-4"
-              >
-                rh@projetaj.com.br
               </a>
             </dd>
           </div>
