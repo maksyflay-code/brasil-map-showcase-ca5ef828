@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 
 type ServicePhotosProps = {
@@ -9,6 +10,9 @@ type ServicePhotosProps = {
 export function ServicePhotos({ title, images }: ServicePhotosProps) {
   const [active, setActive] = useState(0);
   const [carouselRef, carousel] = useEmblaCarousel({ loop: true });
+
+  const scrollPrev = useCallback(() => carousel?.scrollPrev(), [carousel]);
+  const scrollNext = useCallback(() => carousel?.scrollNext(), [carousel]);
 
   const updateActive = useCallback(() => {
     if (carousel) setActive(carousel.selectedScrollSnap());
